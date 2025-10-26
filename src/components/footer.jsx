@@ -5,8 +5,8 @@ export default function Footer(){
     const dates = new Date().getFullYear();
     return(
         <>
-            <footer className="px-10 py-5 w-full bg-[#111827] mt-2 overflow-hidden">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            <footer className="lg:px-5 px-3 py-5 w-full bg-[#111827] mt-2 overflow-hidden">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                     <div className="w-full flex flex-col">
                         <div className="w-full flex flex-col p-5">
                             <p className='flex text-white text-3xl font-semibold'><img src={logoImg} className='w-12 h-10 ml-[-5%]' />SwiftEase</p>
@@ -28,10 +28,14 @@ export default function Footer(){
                             </h3>
                             <ul className='flex flex-col space-y-4'>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    About Us
+                                    <Link to="/about">
+                                        About Us
+                                    </Link>
                                 </li>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    Services
+                                    <Link to="/services">
+                                        Services
+                                    </Link>
                                 </li>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
                                     Pricing
@@ -82,10 +86,10 @@ export default function Footer(){
                 </div>
                 <hr  className='text-gray-800'/>
                 <div className='w-full h-auto flex justify-between items-center mt-5'>
-                    <p className='text-gray-300 text-xs'>
+                    <p className='text-gray-300 text-[9px] md:text-xs'>
                         &copy; {dates} <Link to="mailto:shiftease@gmail.com" className='hover:text-white'>ShiftEase Logistics Company.</Link> All right reserved.
                     </p>
-                    <p className='text-xs text-gray-300 hover:text-white hover:underline'>
+                    <p className='text-[9px] md:text-xs text-gray-300 hover:text-white hover:underline'>
                         <Link to="webfyre@gmail.com">
                             webfyre@gmail.com
                         </Link>

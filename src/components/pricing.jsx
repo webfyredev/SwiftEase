@@ -31,10 +31,10 @@ export default function Pricing(){
     return(
         <>
             <div className="w-full h-auto flex flex-col items-center bg-[#F9FAFB] overflow-hidden">
-                <motion.h2 {...scrollUp} className="text-4xl mt-10 font-bold text-[#2563EB]">
+                <motion.h2 {...scrollUp} className="text-2xl md:text-3xl lg:text-4xl mt-10 font-bold text-[#2563EB]">
                     Choose your plan
                 </motion.h2>
-                <motion.p {...scrollUpDelay} className="w-130 text-center mt-2 text-gray-600 text-sm">
+                <motion.p {...scrollUpDelay} className="w-90 md:w-130 text-center mt-2 text-gray-600 text-sm">
                     Affordable, flexible plans tailored for individuals and businesses. Choose what fits your shipment size and speed.
                 </motion.p>
                 <motion.div {...scrollLeft} className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">

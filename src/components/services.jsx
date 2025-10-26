@@ -44,10 +44,10 @@ export default function Services(){
     return(
         <>
             <div className="w-full h-auto flex items-center flex-col mt-5 overflow-hidden">
-                <motion.h2 {...scrollUp} className="text-4xl mt-10 font-bold text-[#2563EB]">
+                <motion.h2 {...scrollUp} className=" text-2xl md:text-3xl lg:text-4xl mt-10 font-bold text-[#2563EB]">
                     Our Core Services
                 </motion.h2>
-                <motion.p {...scrollUpDelay} className="text-gray-600 mt-2 text-sm">
+                <motion.p {...scrollUpDelay} className="text-gray-600 mt-2 text-xs md:text-sm text-center">
                     Comprehensive logistics solutions tailored to your business needs
                 </motion.p>
                 <div className='w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 gap-5'>

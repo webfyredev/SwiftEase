@@ -6,7 +6,6 @@ import { useInView } from 'react-intersection-observer'
 import { FaShippingFast, FaLock } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
 import { MdSupportAgent } from "react-icons/md";
-import aboutImg from '../images/services/about_logistics.jpg'
 import { RiShieldCheckLine } from "react-icons/ri";
 import Services from "../components/services";
 import Pricing from "../components/pricing";
@@ -15,6 +14,7 @@ import CTA from "../components/cta";
 import Footer from "../components/footer";
 import { motion } from "framer-motion";
 import { buttonHover, cardHover, scrollLeft, scrollUp, scrollUpDelay, scrollUpDelayNext } from "../effects/motions";
+import About_Us from "../components/about_us";
 
 export default function Home(){
     const {ref, inView} = useInView({
@@ -50,16 +50,16 @@ export default function Home(){
     return(
         <>
             <NavBar />
-            <div className="w-full h-[91vh] relative overflow-hidden">
+            <div className="w-full lg:h-[91vh] md:h-auto h-[85vh] relative overflow-hidden">
                 <img src={bgImg} className="w-full h-full object-cover"/>
                 <div className="absolute top-0 w-full h-full bg-[#1D4ED8]/50 inset-0 flex flex-col items-center justify-center">
-                    <motion.h1 {...scrollUp} className="text-5xl text-white font-bold">
+                    <motion.h1 {...scrollUp} className="text-3xl md:text-4xl lg:text-5xl text-white font-bold">
                         Fast. Reliable
                     </motion.h1>
-                    <motion.h1 {...scrollUpDelay} className="text-5xl text-[#FACC15] font-bold">
+                    <motion.h1 {...scrollUpDelay} className="text-3xl md:text-4xl lg:text-5xl text-[#FACC15] font-bold">
                         Global Logistics Solutions.
                     </motion.h1>
-                    <motion.p {...scrollUpDelayNext} className="w-130 text-center mt-5 text-white">
+                    <motion.p {...scrollUpDelayNext} className="w-80 text-xs md:text-sm md:w-130 text-center mt-5 text-white">
                         Your trusted partner for freight transport, warehousing, and delivery services across the globe.
                         Experience seamless logistics with cutting-edge technology
                     </motion.p>
@@ -74,9 +74,8 @@ export default function Home(){
 
                 </div>
             </div>
-            
             <motion.section {...scrollUp} ref={ref} className="bg-[#F9FAFB] py-10">
-                <div className="w-full text-center grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div className="w-full text-center h-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                     <div>
                         <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#2563EB]">
                             {inView ? <CountUp end={50000} duration={5} /> :0}+
@@ -111,37 +110,13 @@ export default function Home(){
                     </div>
                 </div>
             </motion.section>
-            <div className="w-full h-110 mt-10 flex flex-row p-5 justify-around overflow-hidden">
-                <motion.div {...scrollUp} className="w-[45%] h-full p-5">
-                    <p className="text-[#2563EB] font-semibold text-sm">
-                        About ShiftEase Logistics
-                    </p>
-                    <h2 className="text-3xl mt-2 font-bold">
-                        Delivering Beyond Expectations.
-                    </h2>
-                    <p className="text-sm mt-3 w-115">
-                        At ShiftEase Logistics, we specialize in providing fast, secure, and seamless delivery services tailored to your needs. Our mission is to simplify logistics through innovation and precision — ensuring every package reaches its destination safely and on time.
-                    </p>
-                    <p className="text-sm  mt-3 w-115">
-                        With a dedicated team, modern tracking technology, and a customer-first mindset, we make logistics stress-free so you can focus on what matters most — growing your business.
-                    </p>
-                    <p className="mt-5 text-sm italic font-semibold">
-                        “Swift. Secure. Reliable — that’s the ShiftEase promise.”
-                    </p>
-                    <div className="flex">
-                        <motion.button {...buttonHover} className="mt-5 px-9 py-2.5 text-sm bg-blue-500 text-white rounded-sm font-semibold cursor-pointer hover:bg-[#DBEAFE] hover:text-[#2563EB] transition-all">
-                            Learn More
-                        </motion.button>
-                    </div>
-                </motion.div>  
-                <motion.img {...scrollLeft} src={aboutImg} className="w-[45%] h-full object-cover"/>
-            </div>
+            <About_Us />
             <Services />
-            <div className="bg-white w-full h-120 flex flex-col items-center py-10 mt-10 overflow-hidden">
-                <motion.h2 {...scrollUp} className="text-4xl font-bold mb-3 text-[#2563EB]">
+            <div className="bg-white w-full lg:h-120 h-auto flex flex-col items-center py-10 mt-10 overflow-hidden">
+                <motion.h2 {...scrollUp} className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-[#2563EB]">
                     The ShiftEase Advantage
                 </motion.h2>
-                <motion.p {...scrollUpDelay} className="w-130 text-center text-gray-600 text-sm">
+                <motion.p {...scrollUpDelay} className="md:w-130 w-90 text-center text-gray-600 text-xs md:text-sm">
                     We provide comprehensive logistics solutions with advanced technology, global reach, and unmatched reliabilityfor all your shipping needs
                 </motion.p>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-5 mt-5">
