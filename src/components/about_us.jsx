@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import aboutImg from '../images/services/about_logistics.jpg'
+import aboutImg from '../images/page/pages (11).webp'
 import { scrollUp, scrollLeft, buttonHover } from "../effects/motions"
 export default function About_Us(){
     return(

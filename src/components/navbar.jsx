@@ -1,5 +1,5 @@
 import { FaCar} from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 import logoImg from '../images/logo.webp'
 import { FaTimes, FaBars } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -19,34 +19,34 @@ export default function NavBar(){
                 </div>
                 <ul className='hidden lg:flex flex-row items-center space-x-2 px-5 py-2 outline-none'>
                     <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                        <Link to="/">
+                        <NavLink to="/" end className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                             Home
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                        <Link to='/about'>
+                        <NavLink to='/about' className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                             About
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                        <Link to="/services">
+                        <NavLink to="/services" className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                             Services
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                        <Link to="/trackings">
+                        <NavLink to="/trackings" className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                             Tracking
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                        <Link to="/pricings">
+                        <NavLink to="/pricings" className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                             Pricing
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                        <Link to="/contacts">
+                        <NavLink to="/contacts" className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                             Contacts
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <button className='px-5 py-2.5 bg-blue-500 text-white text-xs font-semibold rounded-md cursor-pointer'>
@@ -61,34 +61,34 @@ export default function NavBar(){
                     <motion.div {...scrollLeft} className='lg:hidden absolute top-12 left-0 z-50 w-full h-auto space-y-4 bg-white'>
                         <ul className='flex flex-col items-left px-5 py-5 outline-none space-y-3'>
                         <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                            <Link to="/">
+                            <NavLink to="/" className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                                 Home
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                            <Link to="/about">
+                            <NavLink to="/about" className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                                 About
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                            <Link to="/services">
+                            <NavLink to="/services" className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                                 Services
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                            <Link to="/trackings">
+                            <NavLink to="/trackings" className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                                 Tracking
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                            <Link to="/pricings">
+                            <NavLink to="/pricings" className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                                 Pricing
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                            <Link to="/contacts">
+                            <NavLink to="/contacts" className={({isActive}) => `${isActive ? 'text-[#2563EB] font-semibold' : 'text-gray-700'}`}>
                                 Contacts
-                            </Link>
+                            </NavLink>
                         </li>
 
                         <button className='px-5 py-3 bg-blue-500 text-white text-xs font-semibold rounded-md cursor-pointer'>

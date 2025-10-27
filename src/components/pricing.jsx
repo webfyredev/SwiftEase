@@ -31,7 +31,7 @@ export default function Pricing(){
     return(
         <>
             <div className="w-full h-auto flex flex-col items-center bg-[#F9FAFB] overflow-hidden">
-                <motion.h2 {...scrollUp} className="text-2xl md:text-3xl lg:text-4xl mt-10 font-bold text-[#2563EB]">
+                <motion.h2 {...scrollUp} className="text-xl md:text-2xl lg:text-3xl mt-10 font-bold text-[#2563EB]">
                     Choose your plan
                 </motion.h2>
                 <motion.p {...scrollUpDelay} className="w-90 md:w-130 text-center mt-2 text-gray-600 text-sm">

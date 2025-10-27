@@ -44,7 +44,7 @@ export default function Services(){
     return(
         <>
             <div className="w-full h-auto flex items-center flex-col mt-5 overflow-hidden">
-                <motion.h2 {...scrollUp} className=" text-2xl md:text-3xl lg:text-4xl mt-10 font-bold text-[#2563EB]">
+                <motion.h2 {...scrollUp} className=" text-xl md:text-2xl lg:text-3xl mt-10 font-bold text-[#2563EB]">
                     Our Core Services
                 </motion.h2>
                 <motion.p {...scrollUpDelay} className="text-gray-600 mt-2 text-xs md:text-sm text-center">

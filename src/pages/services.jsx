@@ -1,7 +1,7 @@
 import Footer from "../components/footer";
 import NavBar from "../components/navbar";
 import PageHeader from "../components/pageHeader";
-import serviceHeaderImg from '../images/page/pages (10).webp'
+import serviceHeaderImg from '../images/page/pages (5).webp'
 import { motion } from "framer-motion";
 import { scrollUp, scrollUpDelay, buttonHover, scrollLeft, cardHover } from "../effects/motions";
 import serviceImg1 from '../images/services/service1.jpg'

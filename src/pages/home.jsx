@@ -113,7 +113,7 @@ export default function Home(){
             <About_Us />
             <Services />
             <div className="bg-white w-full lg:h-120 h-auto flex flex-col items-center py-10 mt-10 overflow-hidden">
-                <motion.h2 {...scrollUp} className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-[#2563EB]">
+                <motion.h2 {...scrollUp} className="text-xl md:text-3xl lg:text-3xl font-bold mb-3 text-[#2563EB]">
                     The ShiftEase Advantage
                 </motion.h2>
                 <motion.p {...scrollUpDelay} className="md:w-130 w-90 text-center text-gray-600 text-xs md:text-sm">

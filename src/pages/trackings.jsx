@@ -1,6 +1,7 @@
 import Footer from "../components/footer";
 import NavBar from "../components/navbar";
 import Tracking from "../components/tracking";
+import trackingImg from '../images/page/pages (9).webp'
 import { motion } from "framer-motion";
 import { scrollUp, scrollUpDelay, buttonHover, scrollLeft, cardHover } from "../effects/motions";
 import { FaLocationArrow, FaBell, FaClipboardCheck, FaCalendarCheck, FaShieldAlt, FaHeadset } from "react-icons/fa";
@@ -50,6 +51,7 @@ export default function Trackings(){
         <>
             <NavBar />
             <PageHeader 
+            image = {trackingImg}
             page = 'Tracking'/>
             <Tracking />
             <div className="w-full flex flex-col items-center py-10">

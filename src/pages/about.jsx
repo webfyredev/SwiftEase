@@ -13,7 +13,7 @@ import { MdEmojiPeople } from "react-icons/md";
 import { GiLightBulb } from "react-icons/gi";
 import Team from "../components/team";
 import PageHeader from "../components/pageHeader";
-import aboutHeaderImg from '../images/page/pages (5).webp'
+import aboutHeaderImg from '../images/imgs (2).webp'
 
 export default function About(){
     const values = [

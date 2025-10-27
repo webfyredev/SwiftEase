@@ -5,6 +5,7 @@ import { FaPaperPlane, FaMapMarkedAlt, FaPhoneAlt, FaEnvelope, FaClock, FaUser,}
 import { buttonHover, cardHover, scrollLeft, scrollUp, scrollUpDelay } from "../effects/motions";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import contactImg from '../images/page/pages (10).webp'
 
 export default function Contacts(){
     const offices = [
@@ -56,6 +57,7 @@ export default function Contacts(){
         <>
             <NavBar />
             <PageHeader 
+            image = {contactImg}
             page = "Contacts"/>
             <div className="w-full bg-white lg:h-150 h-auto md:px-10 py-5 lg:flex lg:flex-row flex-col lg:justify-between">
                 <div className="lg:w-[45%] w-full h-full flex flex-col p-5">
@@ -98,7 +100,7 @@ export default function Contacts(){
                         </motion.button>
                     </form>
                 </div>
-                <div className="w-[45%] h-full flex flex-col p-5 ">
+                <div className="lg:w-[45%] h-full flex flex-col p-5">
                     <h3 className="text-2xl font-bold text-md mb-5">
                         Get in Touch
                     </h3>

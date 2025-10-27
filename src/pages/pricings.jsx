@@ -2,6 +2,7 @@ import Footer from "../components/footer";
 import NavBar from "../components/navbar";
 import PageHeader from "../components/pageHeader";
 import Pricing from "../components/pricing";
+import pricingImg from '../images/page/pages (8).webp'
 import { motion } from "framer-motion";
 import { cardHover, scrollLeft, scrollUp, scrollUpDelay, buttonHover } from "../effects/motions";
 
@@ -70,6 +71,7 @@ export default function Pricings(){
         <>
             <NavBar />
             <PageHeader 
+            image = {pricingImg}
             page = 'Pricing'/>
             <Pricing />
             <div className="w-full flex flex-col py-10 bg-white items-center mt-5">
