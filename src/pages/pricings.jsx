@@ -2,7 +2,9 @@ import Footer from "../components/footer";
 import NavBar from "../components/navbar";
 import PageHeader from "../components/pageHeader";
 import Pricing from "../components/pricing";
-import pricingImg from '../images/page/pages (8).webp'
+// import pricingImg from '../images/page/pages (8).webp'
+import pricingImg from '../images/imgs (2).webp'
+
 import { motion } from "framer-motion";
 import { cardHover, scrollLeft, scrollUp, scrollUpDelay, buttonHover } from "../effects/motions";
 
