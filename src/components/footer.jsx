@@ -55,7 +55,10 @@ export default function Footer(){
                                     </Link>
                                 </li>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    Contacts
+                                    
+                                    <Link to="/contacts">
+                                        Contacts
+                                    </Link>
                                 </li>
                             </ul>
                     </div>

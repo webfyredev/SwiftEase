@@ -1,4 +1,4 @@
-import { scrollUp, scrollUpDelay } from "../effects/motions";
+import { buttonHover, cardHover, scrollUp, scrollUpDelay } from "../effects/motions";
 import { motion } from "framer-motion";
 export default function Tracking(){
     const track_codes = [
@@ -27,18 +27,18 @@ export default function Tracking(){
                     </p>
                     <form className="md:w-170 w-85 mt-8 md:flex md:flex-row flex flex-col justify-center">
                             <input type="text" placeholder="Enter tracking ID (e.g., LG123456789)" className="md:w-100 w-full md:h-10 h-12 rounded-sm px-3 text-sm mr-5 text-blue-500 outline-none border-1 border-gray-300 bg-white"/>
-                            <button className="text-sm md:w-40 mt-4 md:mt-0 lg:h-full md:h-10 h-12 rounded-sm bg-blue-500 font-semibold text-white cursor-pointer hover:bg-transparent hover:border-1 hover:border-blue-500 hover:text-blue-500 transition-all">
+                            <motion.button {...buttonHover} className="text-sm md:w-40 mt-4 md:mt-0 lg:h-full md:h-10 h-12 rounded-sm bg-blue-500 font-semibold text-white cursor-pointer hover:bg-transparent hover:border-1 hover:border-blue-500 hover:text-blue-500 transition-all">
                                 Track Package
-                            </button>
+                            </motion.button>
                     </form>
                     <p className="text-gray-500 text-sm mt-5">
                         Quick access to recent shipments
                     </p>
                     <div className="w-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 mt-5">
                         {track_codes.map((codes) =>(
-                            <div key={codes.id} className="font-semibold w-35 h-9 text-center flex items-center justify-center rounded-md text-xs bg-[#DBEAFE] text-[#2563EB]">
+                            <motion.div {...cardHover} key={codes.id} className="font-semibold w-35 h-9 text-center flex items-center justify-center rounded-md text-xs bg-[#DBEAFE] text-[#2563EB]">
                                 {codes.code}
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </motion.div>

@@ -7,6 +7,7 @@ import Service from './pages/services'
 import PageToTop from './components/pageToTop'
 import Trackings from './pages/trackings'
 import Pricings from './pages/pricings'
+import Contacts from './pages/contacts'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/services' element={<Service />}></Route>
         <Route path='/trackings' element={<Trackings />}></Route>
         <Route path='/pricings' element={<Pricings />}></Route>
+        <Route path='/contacts' element={<Contacts />}></Route>
       </Routes>
     </Router>
     </>
