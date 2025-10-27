@@ -34,12 +34,12 @@ export default function NavBar(){
                         </Link>
                     </li>
                     <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                        <Link>
+                        <Link to="/trackings">
                             Tracking
                         </Link>
                     </li>
                     <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                        <Link>
+                        <Link to="/pricings">
                             Pricing
                         </Link>
                     </li>
@@ -76,12 +76,12 @@ export default function NavBar(){
                             </Link>
                         </li>
                         <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                            <Link>
+                            <Link to="/trackings">
                                 Tracking
                             </Link>
                         </li>
                         <li className='px-5 py-2 text-[13px] text-gray-700 hover:cursor-pointer hover:text-[#2563EB] hover:font-semibold transition-all duration-500 hover:rounded-md hover:bg-[#DBEAFE]'>
-                            <Link>
+                            <Link to="/pricings">
                                 Pricing
                             </Link>
                         </li>

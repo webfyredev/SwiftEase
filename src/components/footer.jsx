@@ -5,7 +5,7 @@ export default function Footer(){
     const dates = new Date().getFullYear();
     return(
         <>
-            <footer className="lg:px-5 px-3 py-5 w-full bg-[#111827] mt-2 overflow-hidden">
+            <footer className="lg:px-5 px-3 py-5 w-full bg-[#111827] overflow-hidden">
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                     <div className="w-full flex flex-col">
                         <div className="w-full flex flex-col p-5">
@@ -23,10 +23,15 @@ export default function Footer(){
                         
                     </div>
                     <div className='flex flex-col p-5 lg:ml-15'>
-                            <h3 className='text-sm font-semibold text-white mb-2'>
+                            <h3 className='text-sm font-semibold text-white mb-3'>
                                 Quick Links
                             </h3>
                             <ul className='flex flex-col space-y-4'>
+                                <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
+                                    <Link to="/">
+                                        Home
+                                    </Link>
+                                </li>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
                                     <Link to="/about">
                                         About Us
@@ -38,10 +43,16 @@ export default function Footer(){
                                     </Link>
                                 </li>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    Pricing
+                                    <Link to="/trackings">
+                                        Tracking
+                                    </Link>
                                 </li>
+
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    Tracking
+                                    
+                                    <Link to="/pricings">
+                                        Pricing
+                                    </Link>
                                 </li>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
                                     Contacts
@@ -49,7 +60,7 @@ export default function Footer(){
                             </ul>
                     </div>
                     <div className='flex flex-col p-5'>
-                            <h3 className='text-sm font-semibold text-white mb-2'>
+                            <h3 className='text-sm font-semibold text-white mb-3'>
                                 Our Services
                             </h3>
                             <ul className='flex flex-col space-y-4'>
@@ -68,7 +79,7 @@ export default function Footer(){
                             </ul>
                     </div>
                     <div className='flex flex-col p-5'>
-                            <h3 className='text-sm font-semibold text-white mb-2'>
+                            <h3 className='text-sm font-semibold text-white mb-3'>
                                 Contact Info
                             </h3>
                             <ul className='flex flex-col space-y-4'>

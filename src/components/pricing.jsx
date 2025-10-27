@@ -37,9 +37,9 @@ export default function Pricing(){
                 <motion.p {...scrollUpDelay} className="w-90 md:w-130 text-center mt-2 text-gray-600 text-sm">
                     Affordable, flexible plans tailored for individuals and businesses. Choose what fits your shipment size and speed.
                 </motion.p>
-                <motion.div {...scrollLeft} className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
+                <div  className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
                     {pricing_system.map((data) => (
-                        <motion.div {...cardHover} key={data.id} className="w-85 p-5 shadow-md flex flex-col items-center rounded-md">
+                        <motion.div {...cardHover} {...scrollLeft} key={data.id} className="w-85 p-5 shadow-md flex flex-col items-center rounded-md">
                             <p className="font-semibold mt-2 text-md">
                                 {data.type}
                             </p>
@@ -61,7 +61,7 @@ export default function Pricing(){
                             </motion.button>
                         </motion.div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </>
     )

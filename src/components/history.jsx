@@ -44,7 +44,7 @@ export default function History(){
                 </motion.p>
                 <motion.div {...scrollLeft} className="w-full h-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
                     {history_details.map((details) =>(
-                        <motion.div {...cardHover} className="p-5 shadow-md rounded-md mb-5">
+                        <motion.div {...cardHover} className="p-5 shadow-md rounded-md mb-5 bg-white">
                             <p className="font-bold text-[#2563EB]">
                                 {details.year}
                             </p>

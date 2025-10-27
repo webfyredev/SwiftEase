@@ -3,7 +3,7 @@ import NavBar from "../components/navbar";
 import bgImg from '../images/imgs (3).webp'
 import CountUp from "react-countup";
 import { useInView } from 'react-intersection-observer'
-import { FaShippingFast, FaLock } from "react-icons/fa";
+import { FaShippingFast } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
 import { MdSupportAgent } from "react-icons/md";
 import { RiShieldCheckLine } from "react-icons/ri";

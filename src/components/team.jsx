@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { scrollUp, scrollUpDelay } from "../effects/motions";
+import { cardHover, scrollLeft, scrollUp, scrollUpDelay } from "../effects/motions";
 import teamBg1 from '../images/team/teams (5).jpg'
 import teamBg2 from '../images/team/teams (2).jpg'
 import teamBg3 from '../images/team/teams (3).jpg'
@@ -48,7 +48,7 @@ export default function Team(){
                 </motion.p>
                 <div className="mt-5 w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-5">
                     {teams_data.map((team) => (
-                        <div className="w-full shadow-md rounded-md flex flex-col mb-5">
+                        <motion.div {...scrollLeft} {...cardHover} className="w-full shadow-md rounded-md flex flex-col mb-5">
                             <img src={team.image} className="w-full h-auto object-cover"/>
                             <div className="w-full h-auto p-3 flex flex-col">
                                 <h2 className="font-bold text-sm">
@@ -61,7 +61,7 @@ export default function Team(){
                                     {team.text}
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

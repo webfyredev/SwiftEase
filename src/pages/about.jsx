@@ -96,7 +96,7 @@ export default function About(){
                 </motion.p>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-5">
                     {values.map((values) =>(
-                        <div className="w-full p-8 flex flex-col items-center">
+                        <motion.div {...scrollLeft} className="w-full p-8 flex flex-col items-center">
                             {values.icon}
                             <h3 className="mt-3 text-sm font-semibold">
                                 {values.title}
@@ -104,7 +104,7 @@ export default function About(){
                             <p className="text-xs text-center text-gray-400 mt-2">
                                 {values.text}
                             </p>
-                        </div>
+                        </motion.div>
 
                     ))}
                 </div>
