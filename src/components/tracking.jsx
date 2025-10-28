@@ -34,7 +34,7 @@ export default function Tracking(){
                     <p className="text-gray-500 text-sm mt-5">
                         Quick access to recent shipments
                     </p>
-                    <div className="w-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 mt-5">
+                    <div className="w-auto h-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 my-5">
                         {track_codes.map((codes) =>(
                             <motion.div {...cardHover} key={codes.id} className="font-semibold w-35 h-9 text-center flex items-center justify-center rounded-md text-xs bg-[#DBEAFE] text-[#2563EB]">
                                 {codes.code}

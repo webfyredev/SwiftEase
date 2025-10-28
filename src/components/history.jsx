@@ -35,14 +35,14 @@ export default function History(){
     ]
     return(
         <>
-            <div className="w-full h-auto bg-[#F9FAFB] mt-10 flex flex-col items-center py-5 px-10">
+            <div className="w-full h-auto bg-[#F9FAFB] mt-10 flex flex-col items-center py-5 lg:px-10">
                 <motion.h2 {...scrollUp} className="font-bold text-2xl">
                     Our Journey
                 </motion.h2>
-                <motion.p {...scrollUpDelay} className="text-sm text-gray-400 mt-2">
+                <motion.p {...scrollUpDelay} className="text-sm text-gray-400 mt-2 text-center">
                     From a small local business to a global logistics leader
                 </motion.p>
-                <motion.div {...scrollLeft} className="w-full h-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
+                <motion.div {...scrollLeft} className="w-full h-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 p-5">
                     {history_details.map((details) =>(
                         <motion.div {...cardHover} className="p-5 shadow-md rounded-md mb-5 bg-white">
                             <p className="font-bold text-[#2563EB]">

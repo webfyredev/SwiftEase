@@ -68,32 +68,32 @@ export default function Contacts(){
                         <div className="w-full h-auto md:flex md:flex-row md:justify-between md:items-center mb-5">
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17 mb-3 md:mb-0">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Full Name *</label>
-                                <input type="text" placeholder="Enter your full name" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 bg-white"/>
+                                <input type="text" placeholder="Enter your full name" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
                             </div>
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17 mb-3 md:mb-0">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Email Address *</label>
-                                <input type="text" placeholder="Enter your email" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 bg-white"/>
+                                <input type="text" placeholder="Enter your email" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
                             </div>
                             
                         </div>
                         <div className="w-full h-auto md:flex md:flex-row md:justify-between md:items-center mb-5">
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17 mb-3 md:mb-0">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Phone Number</label>
-                                <input type="text" placeholder="Enter your phone number" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 bg-white"/>
+                                <input type="text" placeholder="Enter your phone number" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
                             </div>
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Company Name</label>
-                                <input type="text" placeholder="Enter your company name" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 bg-white"/>
+                                <input type="text" placeholder="Enter your company name" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
                             </div>
                             
                         </div>
                         <div className="flex flex-col w-full md:h-15 h-17 md:mb-2 mb-3">
                             <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Service Interest</label>
-                            <input type="text" placeholder="Select a service" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 bg-white"/>
+                            <input type="text" placeholder="Select a service" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
                         </div>
                         <div className="flex flex-col w-full h-35 mb-5">
                             <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Message *</label>
-                            <textarea name="" placeholder="Tell us about your logistics needs.." className="w-full h-full rounded-sm p-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 bg-white"></textarea>
+                            <textarea name="" placeholder="Tell us about your logistics needs.." className="w-full h-full rounded-sm p-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"></textarea>
                         </div>
                         <motion.button {...buttonHover} className="w-full h-12 rounded bg-blue-500 text-white text-sm font-semibold cursor-pointer flex items-center justify-center">
                             <FaPaperPlane  className="mr-1"/>Send Message
