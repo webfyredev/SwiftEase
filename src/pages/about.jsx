@@ -44,14 +44,22 @@ export default function About(){
             icon : <GiLightBulb className="w-14 h-14 p-4 rounded-full bg-[#DBEAFE] text-[#2563EB]"/>
         }
     ]
-    const {ref, inView} = useInView({
-        triggerOnce : false,
-        threshold : 0.4
-    })
-    const {ref2, inView2} = useInView({
+    const {ref : sectionOneRef, inView:sectionOneInView} = useInView({
         triggerOnce : true,
-        threshold : 0.4
+        threshold : 0.4,
     })
+    const { ref:sectionTwoRef, inView:sectionTwoInView } = useInView({
+        triggerOnce : true,
+        threshold :0.4
+    })
+    // const {ref, inView} = useInView({
+    //     triggerOnce : false,
+    //     threshold : 0.4
+    // })
+    // const {ref2, inView2} = useInView({
+    //     triggerOnce : true,
+    //     threshold : 0.4
+    // })
     return(
         <>
             <NavBar />
@@ -72,10 +80,10 @@ export default function About(){
                     <p className="text-xs md:text-sm  mt-3 lg:w-115 md:w-full w-90">
                         Our vision is to become the world's most trusted logistics partner, connecting businesses and communities through seamless, technology-driven transportation and warehousing solutions
                     </p>
-                    <div ref={ref} className="w-full h-auto flex space-x-10 mt-10">
+                    <div ref={sectionOneRef} className="w-full h-auto flex space-x-10 mt-10">
                         <div>
                             <h2 className="lg:text-xl md:text-lg text-md font-bold text-[#2563EB]">
-                                {inView ? <CountUp end={50000} duration={5} /> :0}+
+                                {sectionOneInView ? <CountUp end={50000} duration={5} /> :0}+
                             </h2>
                             <p className="text-gray-600 mt-2 text-xs md:text-xs font-semibold">
                                 Packages Delivered
@@ -83,7 +91,7 @@ export default function About(){
                         </div>
                         <div>
                             <h2 className="lg:text-xl md:text-lg text-md font-bold text-[#2563EB]">
-                                {inView ? <CountUp end={25} duration={5} /> :0}+
+                                {sectionOneInView ? <CountUp end={25} duration={5} /> :0}+
                             </h2>
                             <p className="text-gray-600 mt-2 text-xs md:text-xs font-semibold">
                                 Countries Served
@@ -123,10 +131,10 @@ export default function About(){
                 <p className="md:w-120 lg:w-140 w-90 mt-5 text-center text-gray-300 text-sm">
                     Our extensive networks spans across continents, ensuring your packages reach their detination anywhere in the world
                 </p>
-                <div ref={ref2} className="lg:w-[70%] w-full  grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5 mt-5">
+                <div ref={sectionTwoRef} className="lg:w-[70%] w-full  grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5 mt-5">
                     <div>
                         <h2 className="lg:text-3xl md:text-lg text-md font-bold text-white">
-                                {inView2 ? <CountUp end={25} duration={5} /> :0}+
+                                {sectionTwoInView ? <CountUp end={25} duration={5} /> :0}+
                         </h2>
                         <p className="text-gray-100 mt-2 text-xs md:text-xs font-semibold">
                             Countries
@@ -134,7 +142,7 @@ export default function About(){
                     </div>
                     <div>
                         <h2 className="lg:text-3xl md:text-lg text-md font-bold text-white">
-                                {inView2 ? <CountUp end={150} duration={5} /> :0}+
+                                {sectionTwoInView ? <CountUp end={150} duration={5} /> :0}+
                         </h2>
                         <p className="text-gray-100 mt-2 text-xs md:text-xs font-semibold">
                             Cities
@@ -142,7 +150,7 @@ export default function About(){
                     </div>
                     <div>
                         <h2 className="lg:text-3xl md:text-lg text-md font-bold text-white">
-                                {inView2 ? <CountUp end={500} duration={5} /> :0}+
+                                {sectionTwoInView ? <CountUp end={500} duration={5} /> :0}+
                         </h2>
                         <p className="text-gray-100 mt-2 text-xs md:text-xs font-semibold">
                             Partners
@@ -150,7 +158,7 @@ export default function About(){
                     </div>
                     <div>
                         <h2 className="lg:text-3xl md:text-lg text-md font-bold text-white">
-                                {inView2 ? <CountUp end={99} duration={5} /> :0}%
+                                {sectionTwoInView ? <CountUp end={99} duration={5} /> :0}%
                         </h2>
                         <p className="text-gray-100 mt-2 text-xs md:text-xs font-semibold">
                             On-Time Delivery
