@@ -1,8 +1,8 @@
-import service1 from '../images/services/service1.jpg'
-import service2 from '../images/services/service2.jpg'
-import service3 from '../images/services/service3.jpg'
+import service1 from '../images/page/page (1).webp'
+import service2 from '../images/page/page (2).webp'
+import service3 from '../images/page/page (5).webp'
 import service4 from '../images/services/service4.jpg'
-import service5 from '../images/services/service5.jpg'
+import service5 from '../images/page/page (3).webp'
 import { motion } from 'framer-motion'
 import { scrollUp, scrollUpDelay, scrollLeft, buttonHover, cardHover } from '../effects/motions'
 

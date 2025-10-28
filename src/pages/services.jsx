@@ -4,10 +4,10 @@ import PageHeader from "../components/pageHeader";
 import serviceHeaderImg from '../images/page/pages (5).webp'
 import { motion } from "framer-motion";
 import { scrollUp, scrollUpDelay, buttonHover, scrollLeft, cardHover } from "../effects/motions";
-import serviceImg1 from '../images/services/service1.jpg'
-import serviceImg2 from '../images/page/pages (5).webp'
+import serviceImg1 from '../images/page/page (1).webp'
+import serviceImg2 from '../images/page/page (2).webp'
 import serviceImg3 from '../images/page/pages (6).webp'
-import serviceImg4 from '../images/services/service4.jpg'
+import serviceImg4 from '../images/page/page (3).webp'
 import {FaWarehouse, FaBoxOpen, FaGlobeAmericas, FaCheck, FaShippingFast, FaBolt, FaHeadset, FaMobileAlt, FaShoppingCart, FaBriefcaseMedical, FaCarSide, FaMicrochip, } from "react-icons/fa";
 import { GiFactory, GiForkKnifeSpoon, GiClothes } from "react-icons/gi";
 import { RiShieldCheckLine, RiBarChartBoxLine } from "react-icons/ri";
@@ -141,7 +141,7 @@ export default function Service(){
                     End-to-end logistics solutions for businesses of all sizes
                 </motion.p>
                 <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row justify-around">
-                    <motion.img {...scrollLeft} src={serviceImg1} className="lg:w-[45%] w-full h-auto lg:h-full rounded-md"/>
+                    <motion.img {...scrollLeft} src={serviceImg1} className="lg:w-[45%] w-full h-auto lg:h-full rounded-md object-cover"/>
                     <motion.div {...scrollLeft} className="lg:w-[45%] w-full h-full p-5">
                         <div className="w-auto flex items-center">
                             <FaShippingFast  className="w-12 h-12 p-2.5 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>

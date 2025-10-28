@@ -14,7 +14,7 @@ import { GiLightBulb } from "react-icons/gi";
 import Team from "../components/team";
 import PageHeader from "../components/pageHeader";
 // import aboutHeaderImg from '../images/imgs (2).webp'
-import aboutHeaderImg from '../images/imgs (1).webp'
+import aboutHeaderImg from '../images/page/page (6).webp'
 
 
 export default function About(){
@@ -45,6 +45,10 @@ export default function About(){
         }
     ]
     const {ref, inView} = useInView({
+        triggerOnce : false,
+        threshold : 0.4
+    })
+    const {ref2, inView2} = useInView({
         triggerOnce : true,
         threshold : 0.4
     })
@@ -119,10 +123,10 @@ export default function About(){
                 <p className="md:w-120 lg:w-140 w-90 mt-5 text-center text-gray-300 text-sm">
                     Our extensive networks spans across continents, ensuring your packages reach their detination anywhere in the world
                 </p>
-                <div ref={ref} className="lg:w-[70%] w-full  grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5 mt-5">
+                <div ref={ref2} className="lg:w-[70%] w-full  grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5 mt-5">
                     <div>
                         <h2 className="lg:text-3xl md:text-lg text-md font-bold text-white">
-                                {inView ? <CountUp end={25} duration={5} /> :0}+
+                                {inView2 ? <CountUp end={25} duration={5} /> :0}+
                         </h2>
                         <p className="text-gray-100 mt-2 text-xs md:text-xs font-semibold">
                             Countries
@@ -130,7 +134,7 @@ export default function About(){
                     </div>
                     <div>
                         <h2 className="lg:text-3xl md:text-lg text-md font-bold text-white">
-                                {inView ? <CountUp end={150} duration={5} /> :0}+
+                                {inView2 ? <CountUp end={150} duration={5} /> :0}+
                         </h2>
                         <p className="text-gray-100 mt-2 text-xs md:text-xs font-semibold">
                             Cities
@@ -138,7 +142,7 @@ export default function About(){
                     </div>
                     <div>
                         <h2 className="lg:text-3xl md:text-lg text-md font-bold text-white">
-                                {inView ? <CountUp end={500} duration={5} /> :0}+
+                                {inView2 ? <CountUp end={500} duration={5} /> :0}+
                         </h2>
                         <p className="text-gray-100 mt-2 text-xs md:text-xs font-semibold">
                             Partners
@@ -146,7 +150,7 @@ export default function About(){
                     </div>
                     <div>
                         <h2 className="lg:text-3xl md:text-lg text-md font-bold text-white">
-                                {inView ? <CountUp end={99} duration={5} /> :0}%
+                                {inView2 ? <CountUp end={99} duration={5} /> :0}%
                         </h2>
                         <p className="text-gray-100 mt-2 text-xs md:text-xs font-semibold">
                             On-Time Delivery

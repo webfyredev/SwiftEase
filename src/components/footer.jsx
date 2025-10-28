@@ -10,7 +10,7 @@ export default function Footer(){
                     <div className="w-full flex flex-col">
                         <div className="w-full flex flex-col p-5">
                             <p className='flex text-white text-3xl font-semibold'><img src={logoImg} className='w-12 h-10 ml-[-5%]' />SwiftEase</p>
-                            <p className='text-sm text-gray-300 text-justify'>
+                            <p className='text-sm text-gray-300'>
                                 Fast, reliable, and global logistics solutions for business worldwide. Your trusted partnerin freight and delivery services.
                             </p>
                             <div className='w-full flex space-x-3 mt-5 h-auto'>
