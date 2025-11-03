@@ -15,9 +15,13 @@ import Team from "../components/team";
 import PageHeader from "../components/pageHeader";
 // import aboutHeaderImg from '../images/imgs (2).webp'
 import aboutHeaderImg from '../images/page/page (6).webp'
+import { useEffect } from "react";
 
 
 export default function About(){
+    useEffect(() =>{
+        document.title = 'About | SwiftEase'
+    }, []);
     const values = [
         {
             id : 1,

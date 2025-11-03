@@ -6,8 +6,12 @@ import { motion } from "framer-motion";
 import { scrollUp, scrollUpDelay, buttonHover, scrollLeft, cardHover } from "../effects/motions";
 import { FaLocationArrow, FaBell, FaClipboardCheck, FaCalendarCheck, FaShieldAlt, FaHeadset } from "react-icons/fa";
 import PageHeader from "../components/pageHeader";
+import { useEffect } from "react";
 
 export default function Trackings(){
+    useEffect(() =>{
+        document.title = 'Trackings | SwiftEase'
+    }, []);
     const track_details = [
         {
             id : 1,

@@ -7,8 +7,12 @@ import pricingImg from '../images/imgs (2).webp'
 
 import { motion } from "framer-motion";
 import { cardHover, scrollLeft, scrollUp, scrollUpDelay, buttonHover } from "../effects/motions";
+import { useEffect } from "react";
 
 export default function Pricings(){
+    useEffect(() =>{
+        document.title = 'Pricing | SwiftEase'
+    }, []);
     const pricing_services = [
         {
             id : 1,

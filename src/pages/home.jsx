@@ -15,8 +15,12 @@ import Footer from "../components/footer";
 import { motion } from "framer-motion";
 import { buttonHover, cardHover, scrollLeft, scrollUp, scrollUpDelay, scrollUpDelayNext } from "../effects/motions";
 import About_Us from "../components/about_us";
+import { useEffect } from "react";
 
 export default function Home(){
+    useEffect(() =>{
+        document.title = 'SwiftEase-Logistics'
+    }, []);
     const {ref, inView} = useInView({
         triggerOnce : true,
         threshold : 0.4

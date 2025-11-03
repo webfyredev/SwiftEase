@@ -12,8 +12,12 @@ import {FaWarehouse, FaBoxOpen, FaGlobeAmericas, FaCheck, FaShippingFast, FaBolt
 import { GiFactory, GiForkKnifeSpoon, GiClothes } from "react-icons/gi";
 import { RiShieldCheckLine, RiBarChartBoxLine } from "react-icons/ri";
 import { TbTruckDelivery } from "react-icons/tb";
+import { useEffect } from "react";
 
 export default function Service(){
+    useEffect(() =>{
+        document.title = 'Services | SwiftEase'
+    }, []);
     const process = [
         {
             id : 1, 

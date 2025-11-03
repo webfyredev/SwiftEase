@@ -6,8 +6,12 @@ import { buttonHover, cardHover, scrollLeft, scrollUp, scrollUpDelay } from "../
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import contactImg from '../images/page/pages (10).webp'
+import { useEffect } from "react";
 
 export default function Contacts(){
+    useEffect(() =>{
+            document.title = 'Contacts | SwiftEase'
+        }, []);
     const offices = [
         {
             id :1,
