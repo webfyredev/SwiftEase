@@ -145,7 +145,7 @@ export default function Service(){
                     End-to-end logistics solutions for businesses of all sizes
                 </motion.p>
                 <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row justify-around">
-                    <motion.img {...scrollLeft} src={serviceImg1} className="lg:w-[45%] w-full h-auto lg:h-full rounded-md object-cover"/>
+                    <motion.img {...scrollLeft} src={serviceImg1} className="lg:w-[45%] w-full h-65 md:h-90 lg:h-full rounded-md object-cover"/>
                     <motion.div {...scrollLeft} className="lg:w-[45%] w-full h-full p-5">
                         <div className="w-auto flex items-center">
                             <FaShippingFast  className="w-12 h-12 p-2.5 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>
@@ -196,10 +196,10 @@ export default function Service(){
                             Learn more
                         </button>
                     </motion.div>
-                    <motion.img {...scrollLeft} src={serviceImg2} className="lg:w-[45%] w-full h-full rounded-md"/>
+                    <motion.img {...scrollLeft} src={serviceImg2} className="lg:w-[45%] w-full h-65 md:h-90 lg:h-full rounded-md object-cover"/>
                 </div>
                 <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row flex flex-col justify-around">
-                    <motion.img {...scrollLeft} src={serviceImg3} className="lg:w-[45%] w-full lg:h-full rounded-md"/>
+                    <motion.img {...scrollLeft} src={serviceImg3} className="lg:w-[45%] w-full h-65 md:h-90 lg:h-full rounded-md object-cover"/>
                     <motion.div {...scrollLeft} className="lg:w-[45%] w-full h-full p-5">
                         <div className="w-auto flex items-center">
                             <FaBoxOpen  className="w-12 h-12 p-2.5 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>
@@ -250,7 +250,7 @@ export default function Service(){
                             Learn more
                         </button>
                     </motion.div>
-                    <motion.img {...scrollLeft} src={serviceImg4} className="lg:w-[45%] w-full h-full rounded-md"/>
+                    <motion.img {...scrollLeft} src={serviceImg4} className="lg:w-[45%] w-full md:h-90 h-65 lg:h-full rounded-md object-cover "/>
 
                 </div>
             </div>

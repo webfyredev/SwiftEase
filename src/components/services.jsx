@@ -53,7 +53,7 @@ export default function Services(){
                 <div className='w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 gap-5'>
                     {service.map((service) =>(
                         <motion.div {...scrollLeft} {...cardHover} className='flex flex-col p-5 shadow-md w-full mb-5'>
-                            <img src={service.image} className='w-full h-full object-cover'/>
+                            <img src={service.image} className='w-full h-65 md:h-full object-cover'/>
                             <h3 className='my-2 text-blue-500 font-semibold'>
                                 {service.title}
                             </h3>
