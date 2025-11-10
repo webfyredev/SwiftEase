@@ -4,6 +4,7 @@ import service3 from '../images/page/page (5).webp'
 import service4 from '../images/services/service4.jpg'
 import service5 from '../images/page/page (3).webp'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { scrollUp, scrollUpDelay, scrollLeft, buttonHover, cardHover } from '../effects/motions'
 
 
@@ -14,31 +15,36 @@ export default function Services(){
             id : 1,
             image : service1, 
             title : 'Freight Transport',
-            text : 'Reliable ground, air and sea freight services'
+            text : 'Reliable ground, air and sea freight services',
+            page : 'freightTransport'
         },
         {
             id : 2,
             image : service2, 
             title : 'Ware Housing',
-            text : 'Secure storage and inventory management'
+            text : 'Secure storage and inventory management',
+            page : 'wareHousing'
         },
         {
             id : 3,
             image : service3, 
             title : 'E-Commerce Delivery',
-            text : 'Fast last-mile delivery for online businesses'
+            text : 'Fast last-mile delivery for online businesses',
+            page : 'ecommerce'
         },
         {
             id : 4,
             image : service4, 
             title : 'International Shipping',
-            text : 'Global shipping to over 25 countries'
+            text : 'Global shipping to over 25 countries',
+            page : 'shipping'
         },
         {
             id : 4,
             image : service5, 
             title : 'Air Transporting System',
-            text : 'Global shipping to over 25 countries'
+            text : 'Global shipping to over 25 countries',
+            page : 'shipping'
         },
     ]
     return(
@@ -61,7 +67,9 @@ export default function Services(){
                                 {service.text}
                             </p>
                             <motion.button {...buttonHover} className='my-3 py-2.5 rounded-md w-35 text-sm bg-[#2563EB] font-semibold text-white cursor-pointer'>
-                                Learn More
+                                <Link to={`/services#${service.page}`}>
+                                    Learn More
+                                </Link>
                             </motion.button>
                         </motion.div>
                     ))}

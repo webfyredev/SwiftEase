@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { scrollUp, buttonHover } from "../effects/motions";
+import { Link } from "react-router-dom";
 export default function CTA(){
     return(
         <>
@@ -12,10 +13,14 @@ export default function CTA(){
                 </p>
                 <div className="flex mt-5">
                     <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md bg-[#FACC15] cursor-pointer mr-5">
-                        Get Free Quote
+                        <Link to="/pricings#quoteSection">
+                            Get Free Quote
+                        </Link>
                     </motion.button>
                     <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md border-1 border-white cursor-pointer hover:bg-[#FACC15] hover:border-none transition-all">
-                        Contact Sales
+                        <Link to="/contacts#contactSection">
+                            Contact Sales
+                        </Link>
                     </motion.button>
                 </div>
             </motion.div>

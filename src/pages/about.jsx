@@ -16,9 +16,19 @@ import PageHeader from "../components/pageHeader";
 // import aboutHeaderImg from '../images/imgs (2).webp'
 import aboutHeaderImg from '../images/page/page (6).webp'
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 export default function About(){
+    const {hash} = useLocation();
+    useEffect(() => {
+        if(hash){
+            const element = document.querySelector(hash)
+            if(element){
+                element.scrollIntoView({behavior : "smooth"})
+            }
+        }
+    })
     useEffect(() =>{
         document.title = 'About | SwiftEase'
     }, []);
@@ -71,7 +81,7 @@ export default function About(){
             image = {aboutHeaderImg}
             page = 'About'/>
             <About_Us />
-            <div className="w-full lg:h-120 h-auto lg:mt-20 lg:flex lg:flex-row flex flex-col px-5 py-10 justify-around overflow-hidden bg-[#F9FAFB]">
+            <div className="w-full lg:h-120 h-auto lg:mt-20 lg:flex lg:flex-row flex flex-col px-5 py-10 justify-around overflow-hidden bg-[#F9FAFB]" id="aboutUs">
                 <motion.img {...scrollRight} src={missionImg} className="lg:w-[45%] w-full h-full object-cover mt-5 md:mt-0"/>
                 <motion.div {...scrollUp} className="w-full lg:w-[45%] h-full md:p-5">
                     

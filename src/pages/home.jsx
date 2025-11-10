@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 import { buttonHover, cardHover, scrollLeft, scrollUp, scrollUpDelay, scrollUpDelayNext } from "../effects/motions";
 import About_Us from "../components/about_us";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Home(){
     useEffect(() =>{
@@ -69,10 +70,14 @@ export default function Home(){
                     </motion.p>
                     <motion.div {...scrollLeft} className="flex mt-5 space-x-5">
                         <motion.button {...buttonHover} className="px-8 py-2 rounded-md cursor-pointer bg-[#FACC15] text-white hover:bg-transparent hover:border-1 hover:border-[#FACC15] hover:text-[#FACC15] transition-all font-semibold text-sm">
-                            Get Quote
+                            <Link to="/pricings#quoteSection">
+                                Get Quote
+                            </Link>
                         </motion.button>
                         <motion.button {...buttonHover} className="px-8 py-2 rounded-md cursor-pointer border-1 border-[#FACC15] text-[#FACC15] hover:bg-[#FACC15] hover:text-white transition-all text-sm font-semibold">
-                            Track Shipments
+                            <Link to="/trackings#trackShipments">
+                                Track Shipments
+                            </Link>
                         </motion.button>
                     </motion.div>
 

@@ -4,11 +4,72 @@ import PageHeader from "../components/pageHeader";
 import { FaPaperPlane, FaMapMarkedAlt, FaPhoneAlt, FaEnvelope, FaClock, FaUser,} from "react-icons/fa";
 import { buttonHover, cardHover, scrollLeft, scrollUp, scrollUpDelay } from "../effects/motions";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import contactImg from '../images/page/pages (10).webp'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Contacts(){
+    const {hash} = useLocation();
+    useEffect(() =>{
+        if(hash){
+            const element = document.querySelector(hash);
+            if(element){
+                element.scrollIntoView({behavior : "smooth"});
+            }
+        }
+    }, [hash]);
+    const [contactsData, setContactsData] = useState({
+        full_name :"", email :"", phone_number: "",
+        company_name : "", service : "", message : "",
+    });
+    const [status, setStatus] = useState({message : "", type : ""});
+    const handleChange = (e) => {
+        setContactsData({...contactsData, [e.target.name] : e.target.value});
+    };
+    const validateForm = () => {
+        const {full_name, email, phone_number, message} = contactsData;
+        if(!/^[a-zA-Z ]{2,}$/.test(full_name.trim())){
+            setStatus({message : "Enter a valid name", type : "error"});
+            return false;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+            setStatus({ message: "Enter a valid email address", type: "error" });
+            return false;
+        }
+
+        if (!/^\d{10,20}$/.test(phone_number.trim())) {
+            setStatus({ message: "Enter a valid phone number (10-20 digits)", type: "error" });
+            return false;
+        }
+        if (message.trim().length < 10) {
+            setStatus({ message: "Message must be at least 10 characters", type: "error" });
+            return false;
+        }
+
+        return true;
+    }
+    const handleContactsSubmission = async(e) =>{
+
+        e.preventDefault();
+        if (!validateForm()) return;
+        try{
+            await axios.post("http://127.0.0.1:234/contacts/", contactsData);
+            setStatus({message : 'Message sent. Thank you for contacting us!', type : 'success'});
+            setContactsData({
+                full_name :"", email :"", phone_number: "",
+                company_name : "", service : "", message : "",
+            });
+            setTimeout(() => setStatus({message : "", type: ""}), 5000);
+        }catch(error){
+            setStatus({message : 'Unable to send message. Try again later', type : 'error'});
+            setTimeout(() => setStatus({message : "", type: ""}), 5000);
+
+        }
+
+    }
+    
+
     useEffect(() =>{
             document.title = 'Contacts | SwiftEase'
         }, []);
@@ -59,47 +120,64 @@ export default function Contacts(){
     ]
     return(
         <>
+            {status.message && (
+                <motion.div initial ={{opacity:0, y:-50}}
+                animate = {{opacity: 1, y:0}}
+                exit={{opacity : 0, y:-50}}
+                transition={{duration:0.4}}
+                className={`fixed top-5 left-1/2 transform -translate-x-1/2 z-50 px-3 md:px-5 py-3 rounded-lg shadow-lg text-xs text-center w-[90%] h-11 md:h-auto md:w-auto md:text-sm text-white font-semibold ${status.type === "success" ? 'bg-green-500' : 'bg-red-500'}`}
+                >
+                    {status.message}
+                </motion.div>
+            )}
             <NavBar />
             <PageHeader 
             image = {contactImg}
             page = "Contacts"/>
-            <div className="w-full bg-white lg:h-150 h-auto md:px-10 py-5 lg:flex lg:flex-row flex-col lg:justify-between">
+            <div className="w-full bg-white lg:h-150 h-auto md:px-10 py-5 lg:flex lg:flex-row flex-col lg:justify-between" id="contactSection">
                 <div className="lg:w-[45%] w-full h-full flex flex-col p-5">
                     <h3 className="text-2xl font-bold text-md">
                         Send Us a Message
                     </h3>
-                    <form action="" className="w-full h-full mt-2 flex flex-col py-5">
+                    <form onSubmit={handleContactsSubmission} className="w-full h-full mt-2 flex flex-col py-5">
                         <div className="w-full h-auto md:flex md:flex-row md:justify-between md:items-center mb-5">
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17 mb-3 md:mb-0">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Full Name *</label>
-                                <input type="text" placeholder="Enter your full name" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
+                                <input type="text" name="full_name" value={contactsData.full_name} onChange={handleChange} required placeholder="Enter your full name" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
                             </div>
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17 mb-3 md:mb-0">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Email Address *</label>
-                                <input type="text" placeholder="Enter your email" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
+                                <input type="text" name="email" value={contactsData.email} onChange={handleChange} required placeholder="Enter your email" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
                             </div>
                             
                         </div>
                         <div className="w-full h-auto md:flex md:flex-row md:justify-between md:items-center mb-5">
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17 mb-3 md:mb-0">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Phone Number</label>
-                                <input type="text" placeholder="Enter your phone number" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
+                                <input type="text" maxLength={15} name="phone_number" value={contactsData.phone_number} onChange={handleChange} required placeholder="Enter your phone number" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
                             </div>
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Company Name</label>
-                                <input type="text" placeholder="Enter your company name" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
+                                <input type="text" name="company_name" value={contactsData.company_name} onChange={handleChange} required placeholder="Enter your company name" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
                             </div>
                             
                         </div>
                         <div className="flex flex-col w-full md:h-15 h-17 md:mb-2 mb-3">
                             <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Service Interest</label>
-                            <input type="text" placeholder="Select a service" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
+                            <select type="text" name="service" value={contactsData.service} onChange={handleChange} required className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white">
+                                <option value="" disabled>Select a service</option>
+                                <option value="Freight Transport">Freight Transport</option>
+                                <option value="WareHousing">WareHousing</option>
+                                <option value="E-commerce Delivery">E-commerce Delivery</option>
+                                <option value="International Shipping">International Shipping</option>
+
+                            </select>
                         </div>
                         <div className="flex flex-col w-full h-35 mb-5">
                             <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Message *</label>
-                            <textarea name="" placeholder="Tell us about your logistics needs.." className="w-full h-full rounded-sm p-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"></textarea>
+                            <textarea name="message" maxLength={255} value={contactsData.message} onChange={handleChange} required placeholder="Tell us about your logistics needs.." className="w-full h-full rounded-sm p-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"></textarea>
                         </div>
-                        <motion.button {...buttonHover} className="w-full h-12 rounded bg-blue-500 text-white text-sm font-semibold cursor-pointer flex items-center justify-center">
+                        <motion.button {...buttonHover} type="submit" className="w-full h-12 rounded bg-blue-500 text-white text-sm font-semibold cursor-pointer flex items-center justify-center">
                             <FaPaperPlane  className="mr-1"/>Send Message
                         </motion.button>
                     </form>
@@ -115,7 +193,7 @@ export default function Contacts(){
                                 Our Location
                             </h3>
                             <p className="text-[11px] text-gray-500 mt-1">
-                                123 Logistics Avenue Business District New York, NY 1001
+                                12 Akinwale Street, Oregun Industrial Layout, Ikeja, Lagos State
                             </p>
                         </div>
                         
@@ -127,14 +205,14 @@ export default function Contacts(){
                                 Phone Numbers
                             </h3>
                             <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
-                                <Link to="phoneto:+2349131580378">
+                                <a href="tel:+2349131580378">
                                     +234 913 1580 378
-                                </Link>
+                                </a>
                             </p>
                             <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
-                                <Link to="phoneto:+2349131580378">
+                                <a href="tel:+2349131580378">
                                     +234 913 1580 378
-                                </Link>
+                                </a>
                             </p>
                             <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
                                 Toll Free: 1-800-LOGISTICS
@@ -149,19 +227,19 @@ export default function Contacts(){
                                 Email Addresses
                             </h3>
                             <p className="text-[12px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
-                                <Link to="mailto:shiftease@gmail.com">
+                                <a href="mailto:shiftease@gmail.com">
                                     shiftease@gmail.com
-                                </Link>
+                                </a>
                             </p>
                             <p className="text-[12px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
-                                <Link to="mailto:shiftease@gmail.com">
+                                <a href="mailto:shiftease@gmail.com">
                                     shiftease2@gmail.com
-                                </Link>
+                                </a>
                             </p>
                             <p className="text-[12px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
-                                <Link to="mailto:webfyre@gmail.com">
+                                <a href="mailto:webfyre@gmail.com">
                                     webfyre@gmail.com
-                                </Link>
+                                </a>
                             </p>
                         </div>
                         
@@ -187,7 +265,7 @@ export default function Contacts(){
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col items-center py-8 bg-[#F9FAFB]">
+            <div className="flex flex-col items-center py-8 bg-[#F9FAFB]" id="scheduleDemo">
                 <motion.h3 {...scrollUp} className="font-bold text-2xl">
                     Our Offices
                 </motion.h3>
@@ -204,7 +282,7 @@ export default function Contacts(){
                                 < FaMapMarkedAlt className="w-3 h-3 text-blue-500 mr-1"/> {office.address}
                             </p>
                             <p className="mt-3 flex items-center text-[12px] font-semibold">
-                                < FaPhoneAlt className="w-3 h-3 text-blue-500 mr-1"/> {office.phone}
+                                < FaPhoneAlt className="w-3 h-3 text-blue-500 mr-1"/> <a href={`tel:${office.phone}`}>{office.phone}</a>
                             </p>
                             <p className="mt-3 flex items-center text-[12px] mb-4">
                                 < FaUser className="w-3 h-3 text-blue-500 mr-1"/>Manager : {office.role}
@@ -213,7 +291,7 @@ export default function Contacts(){
                     ))}
                 </div>
             </div>
-            <div className="w-full flex flex-col items-center bg-[#2563EB] py-10">
+            <div className="w-full flex flex-col items-center bg-[#2563EB] py-10" id="tracking">
                 <motion.h2 {...scrollUp} className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
                     Frequently Asked Questions
                 </motion.h2>

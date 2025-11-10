@@ -7,8 +7,18 @@ import { scrollUp, scrollUpDelay, buttonHover, scrollLeft, cardHover } from "../
 import { FaLocationArrow, FaBell, FaClipboardCheck, FaCalendarCheck, FaShieldAlt, FaHeadset } from "react-icons/fa";
 import PageHeader from "../components/pageHeader";
 import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Trackings(){
+    const {hash} = useLocation();
+    useEffect(() =>{
+        if(hash){
+        const element = document.querySelector(hash)
+        if(element){
+            element.scrollIntoView({behavior : "smooth"});
+        }
+    }
+    }, [hash])
     useEffect(() =>{
         document.title = 'Trackings | SwiftEase'
     }, []);
@@ -88,10 +98,14 @@ export default function Trackings(){
                 </p>
                 <div className="flex mt-5">
                     <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md bg-[#FACC15] cursor-pointer mr-5">
-                        Contact Support
+                        <Link to="/contacts#contactSection">
+                            Contact Support
+                        </Link>
                     </motion.button>
                     <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md border-1 border-white cursor-pointer hover:bg-[#FACC15] hover:border-none transition-all">
-                        Tracking FAQ
+                        <Link to="/contacts#tracking">
+                            Tracking FAQ
+                        </Link>
                     </motion.button>
                 </div>
             </motion.div>

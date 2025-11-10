@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import aboutImg from '../images/page/pages (11).webp'
 import { scrollUp, scrollLeft, buttonHover } from "../effects/motions"
+import { Link } from "react-router-dom"
 export default function About_Us(){
     return(
         <>
@@ -23,7 +24,9 @@ export default function About_Us(){
                     </p>
                     <div className="flex">
                         <motion.button {...buttonHover} className="mt-5 px-9 py-2.5 text-xs md:text-sm bg-blue-500 text-white rounded-sm font-semibold cursor-pointer hover:bg-[#DBEAFE] hover:text-[#2563EB] transition-all">
-                            Learn More
+                            <Link to="/about#aboutUs">
+                                Learn More
+                            </Link>
                         </motion.button>
                     </div>
                 </motion.div>  

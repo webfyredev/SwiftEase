@@ -4,12 +4,23 @@ import PageHeader from "../components/pageHeader";
 import Pricing from "../components/pricing";
 // import pricingImg from '../images/page/pages (8).webp'
 import pricingImg from '../images/imgs (2).webp'
+import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 import { cardHover, scrollLeft, scrollUp, scrollUpDelay, buttonHover } from "../effects/motions";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Pricings(){
+    const {hash} = useLocation();
+    useEffect(()=>{
+        if(hash){
+            const elements = document.querySelector(hash)
+            if(elements){
+                elements.scrollIntoView({behavior : "smooth"})
+            };
+        }
+    }, [hash])
     useEffect(() =>{
         document.title = 'Pricing | SwiftEase'
     }, []);
@@ -134,10 +145,14 @@ export default function Pricings(){
                 </p>
                 <div className="flex mt-5">
                     <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md bg-blue-600 cursor-pointer mr-5">
-                        Start Free Trial
+                        <Link to="/contacts#contactSection">
+                            Start Free Trial
+                        </Link>
                     </motion.button>
                     <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-blue-500 font-semibold rounded-md border-1 border-blue-500 cursor-pointer hover:bg-blue-600 hover:text-white hover:border-none">
-                        Schedule Demo
+                        <Link to="/contacts#scheduleDemo">
+                            Schedule Demo
+                        </Link>
                     </motion.button>
                 </div>
             </motion.div>

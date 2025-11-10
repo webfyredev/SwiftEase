@@ -30,7 +30,7 @@ export default function Pricing(){
     ]
     return(
         <>
-            <div className="w-full h-auto flex flex-col items-center bg-[#F9FAFB] overflow-hidden">
+            <div className="w-full h-auto flex flex-col items-center bg-[#F9FAFB] overflow-hidden" id="quoteSection">
                 <motion.h2 {...scrollUp} className="text-xl md:text-2xl lg:text-3xl mt-10 font-bold text-[#2563EB]">
                     Choose your plan
                 </motion.h2>

@@ -1,6 +1,7 @@
 import logoImg from '../images/logo.webp'
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaLocationArrow, FaMobile, FaEnvelope} from 'react-icons/fa';
+import { SiX } from 'react-icons/si'
 export default function Footer(){
     const dates = new Date().getFullYear();
     return(
@@ -15,7 +16,7 @@ export default function Footer(){
                             </p>
                             <div className='w-full flex space-x-3 mt-5 h-auto'>
                                 <FaFacebook  className='w-10 h-9 p-2.5 rounded-sm bg-[#1F2937] text-white cursor-pointer hover:bg-transparent transition-all'/>
-                                <FaTwitter  className='w-10 h-9 p-2.5 rounded-sm bg-[#1F2937] text-white cursor-pointer hover:bg-transparent transition-all'/>
+                                <SiX  className='w-10 h-9 p-2.5 rounded-sm bg-[#1F2937] text-white cursor-pointer hover:bg-transparent transition-all'/>
                                 <FaLinkedin  className='w-10 h-9 p-2.5 rounded-sm bg-[#1F2937] text-white cursor-pointer hover:bg-transparent transition-all'/>
                                 <FaInstagram  className='w-10 h-9 p-2.5 rounded-sm bg-[#1F2937] text-white cursor-pointer hover:bg-transparent transition-all'/>
                             </div>

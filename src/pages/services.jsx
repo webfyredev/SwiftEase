@@ -13,8 +13,19 @@ import { GiFactory, GiForkKnifeSpoon, GiClothes } from "react-icons/gi";
 import { RiShieldCheckLine, RiBarChartBoxLine } from "react-icons/ri";
 import { TbTruckDelivery } from "react-icons/tb";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Service(){
+    const {hash} = useLocation();
+    useEffect(() =>{
+        if(hash){
+            const element = document.querySelector(hash)
+            if(element){
+                element.scrollIntoView({behavior : "smooth"})
+            }
+        }
+    }, [hash])
     useEffect(() =>{
         document.title = 'Services | SwiftEase'
     }, []);
@@ -144,7 +155,7 @@ export default function Service(){
                 <motion.p {...scrollUpDelay} className="text-sm text-gray-400 mt-2">
                     End-to-end logistics solutions for businesses of all sizes
                 </motion.p>
-                <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row justify-around">
+                <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row justify-around" id="freightTransport">
                     <motion.img {...scrollLeft} src={serviceImg1} className="lg:w-[45%] w-full h-65 md:h-90 lg:h-full rounded-md object-cover"/>
                     <motion.div {...scrollLeft} className="lg:w-[45%] w-full h-full p-5">
                         <div className="w-auto flex items-center">
@@ -167,11 +178,14 @@ export default function Service(){
                             ))}
                         </div>
                         <button className="mt-7 px-6 py-2.5 text-sm font-semibold rounded-sm cursor-pointer bg-blue-500 hover:bg-[#DBEAFE] text-white hover:text-[#2563EB] transition-all">
-                            Learn more
+                            
+                            <a href="#additionServices">
+                                Learn more
+                            </a>
                         </button>
                     </motion.div>
                 </div>
-                <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row flex flex-col justify-around">
+                <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row flex flex-col justify-around" id="wareHousing">
                     <motion.div {...scrollLeft} className="lg:w-[45%] w-full h-full p-5">
                         <div className="w-auto flex items-center">
                             <FaWarehouse  className="w-12 h-12 p-2.5 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>
@@ -193,12 +207,14 @@ export default function Service(){
                             ))}
                         </div>
                         <button className="mt-7 px-6 py-2.5 text-sm font-semibold rounded-sm cursor-pointer bg-blue-500 hover:bg-[#DBEAFE] text-white hover:text-[#2563EB] transition-all">
-                            Learn more
+                            <a href="#additionServices">
+                                Learn more
+                            </a>
                         </button>
                     </motion.div>
                     <motion.img {...scrollLeft} src={serviceImg2} className="lg:w-[45%] w-full h-65 md:h-90 lg:h-full rounded-md object-cover"/>
                 </div>
-                <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row flex flex-col justify-around">
+                <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row flex flex-col justify-around" id="ecommerce">
                     <motion.img {...scrollLeft} src={serviceImg3} className="lg:w-[45%] w-full h-65 md:h-90 lg:h-full rounded-md object-cover"/>
                     <motion.div {...scrollLeft} className="lg:w-[45%] w-full h-full p-5">
                         <div className="w-auto flex items-center">
@@ -221,11 +237,13 @@ export default function Service(){
                             ))}
                         </div>
                         <button className="mt-7 px-6 py-2.5 text-sm font-semibold rounded-sm cursor-pointer bg-blue-500 hover:bg-[#DBEAFE] text-white hover:text-[#2563EB] transition-all">
-                            Learn more
+                            <a href="#additionServices">
+                                Learn more
+                            </a>
                         </button>
                     </motion.div>
                 </div>
-                <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row justify-around">
+                <div className="w-full lg:h-95 h-auto my-5 p-5 lg:flex lg:flex-row justify-around" id="shipping">
                     <motion.div {...scrollLeft} className="lg:w-[45%] w-full h-full p-5">
                         <div className="w-auto flex items-center">
                             <FaGlobeAmericas  className="w-12 h-12 p-2.5 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>
@@ -247,14 +265,16 @@ export default function Service(){
                             ))}
                         </div>
                         <button className="mt-7 px-6 py-2.5 text-sm font-semibold rounded-sm cursor-pointer bg-blue-500 hover:bg-[#DBEAFE] text-white hover:text-[#2563EB] transition-all">
-                            Learn more
+                            <a href="#additionServices">
+                                Learn more
+                            </a>
                         </button>
                     </motion.div>
                     <motion.img {...scrollLeft} src={serviceImg4} className="lg:w-[45%] w-full md:h-90 h-65 lg:h-full rounded-md object-cover "/>
 
                 </div>
             </div>
-            <div className="w-full bg-[#F9FAFB] flex flex-col py-10 items-center">
+            <div className="w-full bg-[#F9FAFB] flex flex-col py-10 items-center" id="additionServices">
                 <motion.h2 {...scrollUp} className="font-bold text-2xl">
                     Additional Services
                 </motion.h2>
@@ -325,10 +345,14 @@ export default function Service(){
                 </p>
                 <div className="flex mt-5">
                     <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md bg-blue-600 cursor-pointer mr-5">
-                        Get Free Quote
+                        <Link to="/pricings#quoteSection">
+                            Get Free Quote
+                        </Link>
                     </motion.button>
                     <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-blue-500 font-semibold rounded-md border-1 border-blue-500 cursor-pointer hover:bg-blue-600 hover:text-white hover:border-none">
-                        Contact Sales
+                        <Link to="/contacts#contactSection">
+                            Contact Sales
+                        </Link>
                     </motion.button>
                 </div>
             </motion.div>
