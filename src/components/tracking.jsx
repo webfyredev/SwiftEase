@@ -9,7 +9,7 @@ export default function Tracking(){
 
     const handleTrack = async () => {
         try {
-            const response = await axios.get(`http://127.0.0.1:234/package/${trackingCode}/`);
+            const response = await axios.get(`https://swiftease-backend.onrender.com/package/${trackingCode}/`);
             setPackageData(response.data);
             // setError("");
         } catch (error){    

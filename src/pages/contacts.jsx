@@ -54,7 +54,7 @@ export default function Contacts(){
         e.preventDefault();
         if (!validateForm()) return;
         try{
-            await axios.post("http://127.0.0.1:234/contacts/", contactsData);
+            await axios.post("https://swiftease-backend.onrender.com/contacts/", contactsData);
             setStatus({message : 'Message sent. Thank you for contacting us!', type : 'success'});
             setContactsData({
                 full_name :"", email :"", phone_number: "",
