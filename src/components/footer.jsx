@@ -90,24 +90,28 @@ export default function Footer(){
                                 <li className='flex items-center text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
                                     <FaLocationArrow  className='mt-1 mr-1'/>123 Logistics Ave, Business District, NY 10001
                                 </li>
-                                <li className='flex text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    <FaMobile className='mt-1 mr-1'/> +234 913 1580 378
-                                </li>
-                                <li className='flex text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    <FaEnvelope className='mt-1 mr-1' /> shiftease@gmail.com
-                                </li>
+                                <a href="tel:/+2349131580378">
+                                    <li className='flex text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
+                                        <FaMobile className='mt-1 mr-1'/> +234 913 1580 378
+                                    </li>
+                                </a>
+                                <a href="mailto:shifease@gmail.com">
+                                    <li className='flex text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
+                                        <FaEnvelope className='mt-1 mr-1'/> shiftease@gmail.com
+                                    </li>
+                                </a>
                             </ul>
                     </div>
                 </div>
                 <hr  className='text-gray-800'/>
                 <div className='w-full h-auto flex justify-between items-center mt-5'>
                     <p className='text-gray-300 text-[9px] md:text-xs'>
-                        &copy; {dates} <Link to="mailto:shiftease@gmail.com" className='hover:text-white'>ShiftEase Logistics Company.</Link> All right reserved.
+                        &copy; {dates} <a href="mailto:shiftease@gmail.com" className='hover:text-white'>ShiftEase Logistics Company.</a> All right reserved.
                     </p>
                     <p className='text-[9px] md:text-xs text-gray-300 hover:text-white hover:underline'>
-                        <Link to="webfyre@gmail.com">
+                        <a href="mailto:webfyre@gmail.com">
                             webfyre@gmail.com
-                        </Link>
+                        </a>
                     </p>
                 </div>
             </footer>
