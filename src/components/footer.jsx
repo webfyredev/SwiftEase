@@ -69,16 +69,24 @@ export default function Footer(){
                             </h3>
                             <ul className='flex flex-col space-y-4'>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    Freight Transport
+                                    <Link to="/services#freightTransport">
+                                        Freight Transport
+                                    </Link>
                                 </li>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    WareHousing
+                                    <Link to="/services#wareHousing">
+                                        WareHousing
+                                    </Link>
                                 </li>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    E-commerce delivery
+                                    <Link to="/services#ecommerce">
+                                        E-commerce delivery
+                                    </Link>
                                 </li>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    International Shipping
+                                    <Link to="/services#shipping">
+                                        International Shipping
+                                    </Link>
                                 </li>
                             </ul>
                     </div>
@@ -109,8 +117,8 @@ export default function Footer(){
                         &copy; {dates} <a href="mailto:shiftease@gmail.com" className='hover:text-white'>ShiftEase Logistics Company.</a> All right reserved.
                     </p>
                     <p className='text-[9px] md:text-xs text-gray-300 hover:text-white hover:underline'>
-                        <a href="mailto:webfyre@gmail.com">
-                            webfyre@gmail.com
+                        <a href="mailto:oyinwebworks@gmail.com">
+                            oyinwebworks@gmail.com
                         </a>
                     </p>
                 </div>
