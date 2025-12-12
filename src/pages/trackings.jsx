@@ -72,7 +72,7 @@ export default function Trackings(){
                 <motion.h2 {...scrollUp} className="font-bold text-2xl md:text-3xl text-black mt-2">
                     Advanced Tracking Features
                 </motion.h2>
-              <motion.p {...scrollUpDelay} className="md:text-sm text-gray-400 mt-2 text-center">
+              <motion.p {...scrollUpDelay} className="text-xs md:text-sm md:w-150 w-85 text-gray-400 mt-2 text-center">
                 Stay informed every step of the way with our comprehensive tracking system
                 </motion.p>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 gap-5 mt-5">
