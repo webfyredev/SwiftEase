@@ -95,7 +95,7 @@ export default function Pricings(){
                 <motion.h2 {...scrollUp} className="font-bold text-2xl md:text-3xl text-black mt-2">
                     Additional Services
                 </motion.h2>
-                <motion.p {...scrollUpDelay} className="md:text-sm text-gray-400 mt-2 text-center">
+                <motion.p {...scrollUpDelay} className="text-xs md:text-sm text-gray-400 mt-2 w-85 md:w-150 text-center">
                 Enhance your shipping experience with our premium add-on services
                 </motion.p>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
@@ -120,7 +120,7 @@ export default function Pricings(){
                 <motion.h2 {...scrollUp} className="font-bold text-2xl md:text-3xl text-black mt-2">
                     Frequently Asked Questions
                 </motion.h2>
-                <motion.p {...scrollUpDelay} className="md:text-sm text-gray-400 mt-2 text-center">
+                <motion.p {...scrollUpDelay} className="text-xs md:text-sm w-85 md:w-150 text-gray-400 mt-2 text-center">
                     Common questions about our pricing and services
                 </motion.p>
                 <div className="lg:w-[70%] md:w-[85%] w-[95%] h-auto flex flex-col items-center mt-5">

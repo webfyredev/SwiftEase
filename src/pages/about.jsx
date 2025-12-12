@@ -115,7 +115,7 @@ export default function About(){
                 </motion.div>  
             </div>
             <History />
-            <div className="w-full h-auto flex flex-col items-center bg-white py-5">
+            <div className="w-full h-auto flex flex-col items-center bg-white py-5 overflow-hidden">
                 <motion.h2 {...scrollUp} className="font-bold text-2xl">
                     Our Core Values
                 </motion.h2>
@@ -138,7 +138,7 @@ export default function About(){
                 </div>
             </div>
             <Team />
-            <div className="w-full h-90 bg-[#2563EB] flex flex-col items-center p-5">
+            <div className="w-full h-90 bg-[#2563EB] flex flex-col items-center p-5 overflow-hidden">
                 <h3 className="font-bold text-2xl text-white mt-5">
                     Global Coverage
                 </h3>

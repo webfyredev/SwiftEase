@@ -39,7 +39,7 @@ export default function Team(){
     ]
     return(
         <>
-            <div className="w-full bg-[#F9FAFB] h-auto flex flex-col items-center py-10">
+            <div className="w-full bg-[#F9FAFB] h-auto flex flex-col items-center py-10 overflow-hidden">
                 <motion.h2 {...scrollUp} className="font-bold text-2xl">
                     Meet Our Leadership Team
                 </motion.h2>

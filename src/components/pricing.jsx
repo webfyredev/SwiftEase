@@ -34,7 +34,7 @@ export default function Pricing(){
                 <motion.h2 {...scrollUp} className="text-xl md:text-2xl lg:text-3xl mt-10 font-bold text-[#2563EB]">
                     Choose your plan
                 </motion.h2>
-                <motion.p {...scrollUpDelay} className="w-90 md:w-130 text-center mt-2 text-gray-600 text-sm">
+                <motion.p {...scrollUpDelay} className="w-90 md:w-130 text-center mt-2 text-gray-600 text-xs md:text-sm">
                     Affordable, flexible plans tailored for individuals and businesses. Choose what fits your shipment size and speed.
                 </motion.p>
                 <div  className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
