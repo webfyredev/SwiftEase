@@ -49,8 +49,8 @@ export default function Team(){
                 <div className="mt-5 w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-5">
                     {teams_data.map((team) => (
                         <motion.div {...scrollLeft} {...cardHover} className="w-full shadow-md rounded-md flex flex-col mb-5">
-                            <img src={team.image} className="w-full h-auto object-cover"/>
-                            <div className="w-full h-auto p-3 flex flex-col">
+                            <img src={team.image} className="w-full h-52 lg:h-45 object-cover rounded-t-md"/>
+                            <div className="w-full h-auto p-3 flex flex-col rounded-b-md">
                                 <h2 className="font-bold text-sm">
                                     {team.name}
                                 </h2>
