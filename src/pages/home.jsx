@@ -15,12 +15,26 @@ import Footer from "../components/footer";
 import { motion } from "framer-motion";
 import { buttonHover, cardHover, scrollLeft, scrollRight, scrollUp, scrollUpDelay, scrollUpDelayNext } from "../effects/motions";
 import About_Us from "../components/about_us";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GiLightBulb } from "react-icons/gi";
 import Team from "../components/team";
 
 export default function Home(){
+    const [trackingCode, setTrackingCode] = useState("");
+    const [packageData, setPackageData] = useState(null);
+    const [error, setError] = useState("");
+    const handleTrack = async () => {
+        try {
+            const response = await axios.get(`https://swiftease-backend.onrender.com/package/${trackingCode}/`);
+            setPackageData(response.data);
+            // setError("");
+        } catch (error){
+            setError("Tracking code not found")
+            setTimeout(() =>  setError(""), 4000)
+            setPackageData(null);
+        };
+    };
     useEffect(() =>{
         document.title = 'SwiftEase-Logistics'
     }, []);
@@ -119,12 +133,31 @@ export default function Home(){
                     <div className="flex flex-col items-center rounded-lg p-3 mt-10 w-[85%] md:w-auto lg:w-[60%] bg-white space-y-2">
                         <h3 className="text-[13px] font-semibold">Track Your Shipment</h3>
                         <div className="w-full md:flex md:flex-row flex flex-col justify-around">
-                            <input type="text" placeholder="Enter tracking ID (e.g., LG123456789)" className="md:w-120 w-full md:h-10 h-12 rounded-lg px-3 text-sm mr-5 text-blue-500 outline-none border-1 border-gray-300 bg-white"/>
-                            <motion.button {...buttonHover} className="text-sm md:w-40 mt-4 md:mt-0 lg:h-full md:h-10 h-12 rounded-sm bg-blue-500 font-semibold text-white cursor-pointer hover:bg-transparent hover:border-1 hover:border-blue-500 hover:text-blue-500 transition-all">
+                            <input type="text" placeholder="Enter tracking ID (e.g., LG123456789)" value={trackingCode} onChange={(e) => setTrackingCode(e.target.value.toUpperCase())} className="md:w-120 w-full md:h-10 h-12 rounded-lg px-3 text-sm mr-5 text-blue-500 outline-none border-1 border-gray-300 bg-white"/>
+                            <motion.button {...buttonHover} onClick={handleTrack} className="text-sm md:w-40 mt-4 md:mt-0 lg:h-full md:h-10 h-12 rounded-sm bg-blue-500 font-semibold text-white cursor-pointer hover:bg-transparent hover:border-1 hover:border-blue-500 hover:text-blue-500 transition-all">
                                 Track Package
                             </motion.button>
                         </div>
-                    </div>  
+                    </div> 
+
+                    <div className="absolute p-5 right-10 top-15">
+                        {error && <motion.p {...scrollLeft} className="text-red-600 text-center px-7 py-3 rounded-lg text-sm bg-white">{error}</motion.p>}
+                        {packageData && (
+                            <div className="w-[30%] h-auto flex items-center justify-between">
+                                <div>
+                                    <h2 className="text-xl font-bold text-gray-700">Package Tracking</h2>
+                                    <p className="text-sm text-gray-500 mt-1">
+                                        Tracking Code: <span className="font-mono font-semibold">{packageData.tracking_code}</span>
+                                    </p>
+                                </div>
+
+                                <span className="px-3 py-1 text-sm rounded-full bg-blue-100 text-blue-600 font-medium">
+                                {packageData.status}
+                                </span>
+                                <p className="text-sm text-[#000000]">Kindly check the tracking page to see full details <Link to="/tracking" className="text-blue-500 font-semibold">Click Here.</Link></p>
+                            </div>
+                        )}
+                    </div> 
 
                 </div>
             </div>
