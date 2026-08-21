@@ -34,11 +34,6 @@ export default function Footer(){
                                     </Link>
                                 </li>
                                 <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
-                                    <Link to="/about">
-                                        About Us
-                                    </Link>
-                                </li>
-                                <li className='text-gray-300 text-[13px] cursor-pointer hover:text-white transition-all duration-300'>
                                     <Link to="/services">
                                         Services
                                     </Link>
@@ -117,8 +112,8 @@ export default function Footer(){
                         &copy; {dates} <a href="mailto:shiftease@gmail.com" className='hover:text-white'>ShiftEase Logistics Company.</a> All right reserved.
                     </p>
                     <p className='text-[9px] md:text-xs text-gray-300 hover:text-white hover:underline'>
-                        <a href="mailto:oyinwebworks@gmail.com">
-                            oyinwebworks@gmail.com
+                        <a href="mailto:oyinbook@gmail.com">
+                            Developed by Oyinlade
                         </a>
                     </p>
                 </div>

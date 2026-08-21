@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Home from './pages/home'
-import About from './pages/about'
 import Service from './pages/services'
 import PageToTop from './components/pageToTop'
 import Trackings from './pages/trackings'
@@ -16,7 +15,6 @@ function App() {
       <PageToTop />
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/about' element={<About />}></Route>
         <Route path='/services' element={<Service />}></Route>
         <Route path='/trackings' element={<Trackings />}></Route>
         <Route path='/pricings' element={<Pricings />}></Route>

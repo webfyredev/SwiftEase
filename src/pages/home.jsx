@@ -1,11 +1,11 @@
 import NavBar from "../components/navbar";
 // import heroBg from '../images/hero.webp'
-import bgImg from '../images/imgs (3).webp'
+import bgImg from '../images/hero.jpg'
 import CountUp from "react-countup";
 import { useInView } from 'react-intersection-observer'
-import { FaShippingFast } from "react-icons/fa";
+import { FaHandshake, FaLeaf, FaShippingFast } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
-import { MdSupportAgent } from "react-icons/md";
+import { MdEmojiPeople, MdSupportAgent } from "react-icons/md";
 import { RiShieldCheckLine } from "react-icons/ri";
 import Services from "../components/services";
 import Pricing from "../components/pricing";
@@ -13,10 +13,12 @@ import Tracking from "../components/tracking";
 import CTA from "../components/cta";
 import Footer from "../components/footer";
 import { motion } from "framer-motion";
-import { buttonHover, cardHover, scrollLeft, scrollUp, scrollUpDelay, scrollUpDelayNext } from "../effects/motions";
+import { buttonHover, cardHover, scrollLeft, scrollRight, scrollUp, scrollUpDelay, scrollUpDelayNext } from "../effects/motions";
 import About_Us from "../components/about_us";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { GiLightBulb } from "react-icons/gi";
+import Team from "../components/team";
 
 export default function Home(){
     useEffect(() =>{
@@ -26,6 +28,32 @@ export default function Home(){
         triggerOnce : true,
         threshold : 0.4
     })
+    const values = [
+        {
+            id : 1,
+            title : 'Reliability',
+            text : 'We ensure your packages reach their destination safely and on time, every time.',
+            icon : <FaHandshake  className="w-14 h-14 p-4 rounded-full bg-[#DBEAFE] text-[#2563EB]"/>
+        },
+        {
+            id : 2,
+            title : 'Customer First',
+            text : 'Our customers are at the heart of everything we do, driving our commitment to excellence',
+            icon : <MdEmojiPeople className="w-14 h-14 p-4 rounded-full bg-[#DBEAFE] text-[#2563EB]"/>
+        },
+        {
+            id : 3,
+            title : 'Sustainability',
+            text : 'We are committed to eco-friendly practices and reducing our environmental footprint',
+            icon : <FaLeaf className="w-14 h-14 p-4 rounded-full bg-[#DBEAFE] text-[#2563EB]"/>
+        },
+        {
+            id : 4,
+            title : 'Innovation',
+            text : 'Continously investing in technology to provide cutting-edge logistics solutions',
+            icon : <GiLightBulb className="w-14 h-14 p-4 rounded-full bg-[#DBEAFE] text-[#2563EB]"/>
+        }
+    ]
     const choose = [
         {
             id : 1, 
@@ -57,34 +85,51 @@ export default function Home(){
             <NavBar />
             <div className="w-full lg:h-[91vh] md:h-auto h-[85vh] relative overflow-hidden">
                 <img src={bgImg} className="w-full h-full object-cover"/>
-                <div className="absolute top-0 w-full h-full bg-[#1D4ED8]/50 inset-0 flex flex-col items-center justify-center">
-                    <motion.h1 {...scrollUp} className="text-3xl md:text-4xl lg:text-5xl text-white font-bold">
-                        Fast. Reliable
+                <div className="absolute top-0 w-full h-full bg-[#111827]/70 inset-0 flex flex-col items-center justify-center">
+                    <motion.div 
+                        {...scrollRight}
+                        className="w-auto flex items-center justify-center px-5 py-1 rounded-full space-x-1.5 bg-blue-500/30 mt-15">
+                        <h4 className="text-[12px] font-bold text-white">Fast</h4><span className="w-1 h-1 bg-white rounded-full mt-0.5"></span><h4 className="text-[12px] font-bold text-white">Reliable</h4><span className="w-1 h-1 bg-white rounded-full mt-0.5"></span><h4 className="text-[12px] font-bold text-white">Nationwide</h4>
+                    </motion.div>
+                    <motion.h1 {...scrollUp} className=" mt-3 lg:mt-0 text-3xl md:text-4xl lg:text-6xl text-white font-bold">
+                        Ship Smarter.
                     </motion.h1>
-                    <motion.h1 {...scrollUpDelay} className="text-3xl md:text-4xl lg:text-5xl text-[#FACC15] font-bold">
+                    <motion.h1 {...scrollUpDelay} className="text-3xl md:text-4xl lg:text-7xl text-white font-bold">
+                        Deliver Faster.
+                    </motion.h1>
+                    {/* <motion.h1 {...scrollUpDelay} className="text-3xl md:text-4xl lg:text-5xl text-[#FACC15] font-bold">
                         Global Logistics Solutions.
-                    </motion.h1>
+                    </motion.h1> */}
                     <motion.p {...scrollUpDelayNext} className="w-80 text-xs md:text-sm md:w-130 text-center mt-5 text-white">
                         Your trusted partner for freight transport, warehousing, and delivery services across the globe.
                         Experience seamless logistics with cutting-edge technology
                     </motion.p>
                     <motion.div {...scrollLeft} className="flex mt-5 space-x-5">
-                        <motion.button {...buttonHover} className="px-8 py-2 rounded-md cursor-pointer bg-[#FACC15] text-white hover:bg-transparent hover:border-1 hover:border-[#FACC15] hover:text-[#FACC15] transition-all font-semibold text-sm">
+                        <motion.button {...buttonHover} className="px-4 md:px-8 py-2.5 rounded-md cursor-pointer bg-blue-500 text-white transition-all font-semibold text-sm">
                             <Link to="/pricings#quoteSection">
-                                Get Quote
+                                Send a Package
                             </Link>
                         </motion.button>
-                        <motion.button {...buttonHover} className="px-8 py-2 rounded-md cursor-pointer border-1 border-[#FACC15] text-[#FACC15] hover:bg-[#FACC15] hover:text-white transition-all text-sm font-semibold">
+                        <motion.button {...buttonHover} className="px-4 md:px-8 py-2 rounded-md cursor-pointer border-1 border-[#FACC15] text-[#FACC15] hover:bg-[#FACC15] hover:text-white transition-all text-sm font-semibold">
                             <Link to="/trackings#trackShipments">
                                 Track Shipments
                             </Link>
                         </motion.button>
                     </motion.div>
+                    <div className="flex flex-col items-center rounded-lg p-3 mt-10 w-[85%] md:w-auto lg:w-[60%] bg-white space-y-2">
+                        <h3 className="text-[13px] font-semibold">Track Your Shipment</h3>
+                        <div className="w-full md:flex md:flex-row flex flex-col justify-around">
+                            <input type="text" placeholder="Enter tracking ID (e.g., LG123456789)" className="md:w-120 w-full md:h-10 h-12 rounded-lg px-3 text-sm mr-5 text-blue-500 outline-none border-1 border-gray-300 bg-white"/>
+                            <motion.button {...buttonHover} className="text-sm md:w-40 mt-4 md:mt-0 lg:h-full md:h-10 h-12 rounded-sm bg-blue-500 font-semibold text-white cursor-pointer hover:bg-transparent hover:border-1 hover:border-blue-500 hover:text-blue-500 transition-all">
+                                Track Package
+                            </motion.button>
+                        </div>
+                    </div>  
 
                 </div>
             </div>
             <motion.section {...scrollUp} ref={ref} className="bg-[#F9FAFB] py-10">
-                <div className="w-full text-center h-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                <div className="w-full text-center h-auto grid grid-cols-2 lg:grid-cols-4 gap-5">
                     <div>
                         <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#2563EB]">
                             {inView ? <CountUp end={50000} duration={5} /> :0}+
@@ -120,8 +165,30 @@ export default function Home(){
                 </div>
             </motion.section>
             <About_Us />
+            <div className="w-full h-auto flex flex-col items-center bg-white py-5 overflow-hidden my-10">
+                <motion.h2 {...scrollUp} className="font-bold text-2xl">
+                    Our Core Values
+                </motion.h2>
+                <motion.p {...scrollUpDelay} className="text-sm text-gray-400 mt-2">
+                    The principles that guides everything we do
+                </motion.p>
+                <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-5">
+                    {values.map((values) =>(
+                        <motion.div {...scrollLeft} className="w-full p-8 flex flex-col items-center">
+                            {values.icon}
+                            <h3 className="mt-3 text-sm font-semibold">
+                                {values.title}
+                            </h3>
+                            <p className="text-xs text-center text-gray-400 mt-2">
+                                {values.text}
+                            </p>
+                        </motion.div>
+
+                    ))}
+                </div>
+            </div>
             <Services />
-            <div className="bg-white w-full lg:h-120 h-auto flex flex-col items-center py-10 mt-10 overflow-hidden">
+            <div className="bg-white w-full lg:h-120 h-auto flex flex-col items-center py-10 mt-10 overflow-hidden px-5">
                 <motion.h2 {...scrollUp} className="text-xl md:text-3xl lg:text-3xl font-bold mb-3 text-[#2563EB]">
                     The ShiftEase Advantage
                 </motion.h2>
@@ -144,6 +211,7 @@ export default function Home(){
             </div>
             <Pricing />
             <Tracking />
+            <Team />
             <CTA />
             <Footer />
         </>

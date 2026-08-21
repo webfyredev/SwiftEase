@@ -29,8 +29,11 @@ export default function About_Us(){
                             </Link>
                         </motion.button>
                     </div>
-                </motion.div>  
-                <motion.img {...scrollLeft} src={aboutImg} className="lg:w-[45%] w-full h-full object-cover mt-5 md:mt-0"/>
+                </motion.div>
+                <div className="w-full lg:w-[45%] h-auto lg:p-5">
+                    <motion.img {...scrollLeft} src={aboutImg} className="w-full h-full object-cover mt-5 md:mt-0 rounded-xl"/>
+                    
+                </div>  
             </div>
         </>
     )
