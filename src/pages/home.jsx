@@ -140,7 +140,7 @@ export default function Home(){
                         </div>
                     </div> 
 
-                    <div className="absolute p-5 right-10 top-15">
+                    <div className="absolute p-5 right-10  top-5 md:top-15">
                         {error && <motion.p {...scrollLeft} className="text-red-600 text-center px-7 py-3 rounded-lg text-sm bg-white">{error}</motion.p>}
                         {packageData && (
                             <div className="w-[30%] h-auto flex items-center justify-between">

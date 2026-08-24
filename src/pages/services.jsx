@@ -315,7 +315,7 @@ export default function Service(){
 
                             <motion.a
                                 {...buttonHover}
-                                href="/contact"
+                                href="/contacts"
                                 className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-blue-200 text-blue-600 hover:bg-blue-50 transition-all"
                             >
                                 Get a Quote
@@ -409,7 +409,7 @@ export default function Service(){
                             </motion.a>
                             <motion.a
                                 {...buttonHover}
-                                href="/contact"
+                                href="/contacts"
                                 className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-blue-200 text-blue-600 hover:bg-blue-50 transition-all"
                             >
                                 Talk to Us
@@ -500,7 +500,7 @@ export default function Service(){
                             </a>
                             <motion.a
                                 {...buttonHover}
-                                href="/contact"
+                                href="/contacts"
                                 className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-blue-200 text-blue-600 hover:bg-blue-50 transition-all"
                             >
                                 Get Started
@@ -591,7 +591,7 @@ export default function Service(){
                             </a>
                             <motion.a
                                 {...buttonHover}
-                                href="/contact"
+                                href="/contacts"
                                 className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-blue-200 text-blue-600 hover:bg-blue-50 transition-all"
                             >
                                 Contact Us

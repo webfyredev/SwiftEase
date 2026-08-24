@@ -45,9 +45,9 @@ export default function NavBar(){
                     </li>
                 </ul>
                 <div className='hidden lg:flex space-x-4'>
-                    <button className='px-4 py-2 text-gray-700 text-sm font-medium rounded-md cursor-pointer'>
+                    <Link to="/login" className='px-4 py-2 text-gray-700 text-sm font-medium rounded-md cursor-pointer'>
                         Log in
-                    </button>
+                    </Link>
                     <button className='px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-md cursor-pointer'>
                         Sign up
                     </button>
