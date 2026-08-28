@@ -35,15 +35,15 @@ export default function Tracking(){
         <>
             <motion.div {...scrollUp} className="w-full h-auto lg:h-100 flex items-center justify-center py-10 bg-white overflow-hidden" id="trackShipments">
                 <motion.div {...scrollUpDelay} className="w-200 h-full bg-[#F9FAFB] rounded-md shadow-xs flex flex-col items-center">
-                    <h3 className="mt-10 text-lg md:text-xl font-semibold">
+                    <h3 className="mt-10 text-lg md:text-xl font-semibold text-[#0F172A]">
                         Enter Tracking Information
                     </h3>
                     <p className="text-xs md:text-sm mt-1 text-gray-600">
                         Enter your tracking ID to get the latest status of your shipment
                     </p>
                     <div className="md:w-170 w-85 mt-8 md:flex md:flex-row flex flex-col justify-center">
-                            <input type="text" placeholder="Enter tracking ID (e.g., LG123456789)" value={trackingCode} onChange={(e) =>setTrackingCode(e.target.value.toUpperCase())} className="md:w-100 w-full md:h-10 h-12 rounded-sm px-3 text-sm mr-5 text-blue-500 outline-none border-1 border-gray-300 bg-white"/>
-                            <motion.button {...buttonHover} onClick={handleTrack} className="text-sm md:w-40 mt-4 md:mt-0 lg:h-full md:h-10 h-12 rounded-sm bg-blue-500 font-semibold text-white cursor-pointer hover:bg-transparent hover:border-1 hover:border-blue-500 hover:text-blue-500 transition-all">
+                            <input type="text" placeholder="Enter tracking ID (e.g., LG123456789)" value={trackingCode} onChange={(e) =>setTrackingCode(e.target.value.toUpperCase())} className="md:w-100 w-full md:h-10 h-12 rounded-sm px-3 text-sm mr-5 border-1 border-slate-200 rounded-md text-sm outline-none focus:border-[#0F172A] focus:ring-2 focus:ring-[#0F172A]/20 transition-all duration-200"/>
+                            <motion.button {...buttonHover} onClick={handleTrack} className="text-sm md:w-40 mt-4 md:mt-0 lg:h-full md:h-10 h-12 rounded-lg bg-[#14B8A6] font-semibold text-white cursor-pointer transition-all">
                                 Track Package
                             </motion.button>
                     </div>
@@ -52,7 +52,7 @@ export default function Tracking(){
                     </p>
                     <div className="w-auto h-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 my-5">
                         {track_codes.map((codes) =>(
-                            <motion.div {...cardHover} key={codes.id} className="font-semibold w-35 h-9 text-center flex items-center justify-center rounded-md text-xs bg-[#DBEAFE] text-[#2563EB]">
+                            <motion.div {...cardHover} key={codes.id} className="font-semibold w-35 h-9 text-center flex items-center justify-center rounded-md text-xs bg-[#14B8A6]/12 text-[#14B8A6]">
                                 {codes.code}
                             </motion.div>
                         ))}

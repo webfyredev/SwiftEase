@@ -40,7 +40,7 @@ export default function Team(){
     return(
         <>
             <div className="w-full bg-[#F9FAFB] h-auto flex flex-col items-center py-10 px-5 overflow-hidden">
-                <motion.h2 {...scrollUp} className="font-bold text-2xl">
+                <motion.h2 {...scrollUp} className="font-bold text-2xl text-[#0F172A]">
                     Meet Our Leadership Team
                 </motion.h2>
                 <motion.p {...scrollUpDelay} className="text-sm text-gray-400 mt-2">
@@ -51,10 +51,10 @@ export default function Team(){
                         <motion.div {...scrollLeft} {...cardHover} className="w-full shadow-md rounded-md flex flex-col mb-5">
                             <img src={team.image} className="w-full h-52 lg:h-45 object-cover rounded-t-md"/>
                             <div className="w-full h-auto p-3 flex flex-col rounded-b-md">
-                                <h2 className="font-bold text-sm">
+                                <h2 className="font-bold text-sm text-[#0F172A]">
                                     {team.name}
                                 </h2>
-                                <p className="text-xs font-semibold mt-1 text-[#2563EB]">
+                                <p className="text-xs font-semibold mt-1 text-[#14B8A6]">
                                     {team.role}
                                 </p>
                                 <p className="text-xs my-2 text-gray-400">

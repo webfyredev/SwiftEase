@@ -1,4 +1,4 @@
-import logoImg from '../images/logo.webp'
+import logoImg from '../images/auth_log.png'
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaLocationArrow, FaMobile, FaEnvelope} from 'react-icons/fa';
 import { SiX } from 'react-icons/si'
@@ -10,7 +10,7 @@ export default function Footer(){
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                     <div className="w-full flex flex-col">
                         <div className="w-full flex flex-col p-5">
-                            <p className='flex text-white text-3xl font-semibold'><img src={logoImg} className='w-12 h-10 ml-[-5%]' />SwiftEase</p>
+                            <Link to="/" className='flex text-white text-3xl font-semibold ml-[-12px] items-center mb-2'><img src={logoImg} className='w-15 h-10 ml-[-4%] mt-[-12px]' /><h3 className='ml-[-3px]'>SwiftEase</h3></Link>
                             <p className='text-sm text-gray-300'>
                                 Fast, reliable, and global logistics solutions for business worldwide. Your trusted partnerin freight and delivery services.
                             </p>

@@ -7,10 +7,10 @@ export default function About_Us(){
         <>
             <div className="w-full lg:h-110 h-auto mt-10 lg:flex lg:flex-row flex flex-col p-5 justify-around overflow-hidden">
                 <motion.div {...scrollUp} className="w-full lg:w-[45%] h-full md:p-5">
-                    <p className="text-[#2563EB] font-semibold text-sm">
+                    <p className="text-[#14B8A6] font-semibold text-sm">
                         About ShiftEase Logistics
                     </p>
-                    <h2 className="text-xl md:text-3xl mt-2 font-bold">
+                    <h2 className="text-xl md:text-3xl mt-2 font-bold text-[#0F172A]">
                         Delivering Beyond Expectations.
                     </h2>
                     <p className="text-xs md:text-sm mt-3 lg:w-115 w-90 md:w-full">
@@ -19,11 +19,11 @@ export default function About_Us(){
                     <p className="text-xs md:text-sm  mt-3 lg:w-115 md:w-full w-90">
                         With a dedicated team, modern tracking technology, and a customer-first mindset, we make logistics stress-free so you can focus on what matters most — growing your business.
                     </p>
-                    <p className="mt-5 text-xs md:text-sm italic font-semibold">
+                    <p className="mt-5 text-xs md:text-sm italic font-semibold text-[#0F172A]">
                         “Swift. Secure. Reliable — that’s the ShiftEase promise.”
                     </p>
                     <div className="flex">
-                        <motion.button {...buttonHover} className="mt-5 px-9 py-2.5 text-xs md:text-sm bg-blue-500 text-white rounded-sm font-semibold cursor-pointer hover:bg-[#DBEAFE] hover:text-[#2563EB] transition-all">
+                        <motion.button {...buttonHover} className="mt-5 px-9 py-2.5 text-xs md:text-sm bg-[#14B8A6] text-white rounded-lg font-semibold cursor-pointer transition-all">
                             <Link to="/about#aboutUs">
                                 Learn More
                             </Link>

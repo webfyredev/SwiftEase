@@ -131,10 +131,10 @@ export default function Services(){
     return(
         <>
             <div className="w-full h-auto flex items-center flex-col mt-5 overflow-hidden lg:p-5">
-                <motion.h2 {...scrollUp} className=" text-xl md:text-2xl lg:text-3xl mt-10 font-bold text-[#2563EB]">
+                <motion.h2 {...scrollUp} className=" text-xl md:text-2xl lg:text-3xl mt-10 font-bold text-[#0F172A]">
                     Our Core Services
                 </motion.h2>
-                <motion.p {...scrollUpDelay} className="text-gray-600 mt-2 text-xs md:text-sm text-center">
+                <motion.p {...scrollUpDelay} className="text-gray-600 mt-2 mb-5 text-xs md:text-sm text-center">
                     Comprehensive logistics solutions tailored to your business needs
                 </motion.p>
                 <div className='w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 gap-5'>
@@ -143,7 +143,7 @@ export default function Services(){
                         {...scrollLeft} {...cardHover} key={service.id} className='flex flex-col w-full mb-5 rounded-md'>
                             <img src={service.image} className='w-full h-50 md:h-60 object-cover rounded-t-md'/>
                             <div className='w-full flex flex-col p-3 rounded-b-md shadow-sm'>
-                                <h3 className='my-2 text-blue-500 font-semibold'>
+                                <h3 className='my-2 text-[#0F172A] font-semibold'>
                                     {service.title}
                                 </h3>
                                 <p className='text-gray-600 text-sm'>
@@ -151,10 +151,10 @@ export default function Services(){
                                 </p>
                                 <ul className='w-full grid grid-cols-2 mt-3 gap-2'>
                                     {service.features.map((data) => (
-                                        <li className='text-[13px] flex items-center justify-center py-1.5 rounded-md bg-[#DBEAFE]/25 text-[#2563EB]'>{data}</li>
+                                        <li className='text-[13px] flex items-center justify-center py-1.5 rounded-md bg-[#14B8A6]/12 text-[#14B8A6]'>{data}</li>
                                     ))}
                                 </ul>
-                                <motion.button {...buttonHover} className='my-3 py-2.5 rounded-md w-35 text-sm bg-[#2563EB] font-semibold text-white cursor-pointer'>
+                                <motion.button {...buttonHover} className='my-5 py-2.5 rounded-md w-35 text-sm bg-[#14B8A6] font-semibold text-white cursor-pointer'>
                                     <Link to={`/services#${service.page}`}>
                                         Learn More
                                     </Link>

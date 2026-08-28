@@ -31,32 +31,32 @@ export default function Pricing(){
     return(
         <>
             <div className="w-full h-auto flex flex-col items-center bg-[#F9FAFB] overflow-hidden" id="quoteSection">
-                <motion.h2 {...scrollUp} className="text-xl md:text-2xl lg:text-3xl mt-10 font-bold text-[#2563EB]">
+                <motion.h2 {...scrollUp} className="text-xl md:text-2xl lg:text-3xl mt-10 font-bold text-[#14B8A6]">
                     Choose your plan
                 </motion.h2>
                 <motion.p {...scrollUpDelay} className="w-90 md:w-130 text-center mt-2 text-gray-600 text-xs md:text-sm">
                     Affordable, flexible plans tailored for individuals and businesses. Choose what fits your shipment size and speed.
                 </motion.p>
-                <div  className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
+                <div  className="w-[95%] grid grid-cols-1  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
                     {pricing_system.map((data) => (
-                        <motion.div {...cardHover} {...scrollLeft} key={data.id} className="w-85 p-5 shadow-md flex flex-col items-center rounded-md">
-                            <p className="font-semibold mt-2 text-md">
+                        <motion.div {...cardHover} {...scrollLeft} key={data.id} className="w-full p-5 shadow-md flex flex-col items-center rounded-md">
+                            <p className="font-semibold mt-2 text-md text-[#0F172A]">
                                 {data.type}
                             </p>
                             <p className="text-sm text-gray-600 mt-1">
                                 {data.sb_text}  
                             </p>
-                            <h2 className="text-3xl my-2 font-bold text-[#2563EB]">
+                            <h2 className="text-3xl my-2 font-bold text-[#14B8A6]">
                                 {data.price} <span className="text-xl font-semibold text-gray-500">{data.month}</span>
                             </h2>
                             <ul className="flex flex-col space-y-3">
                                 {data.benefits.map((benefits, index) =>(
                                     <li key={index} className="text-sm text-gray-500 flex">
-                                        <FaCheck  className="w-2 h-2 mt-2 mr-1.5 text-[#2563EB]"/>{benefits}
+                                        <FaCheck  className="w-2 h-2 mt-2 mr-1.5 text-[#14B8A6]"/>{benefits}
                                     </li>
                                 ))}
                             </ul>
-                            <motion.button {...buttonHover} className="mt-5 w-full h-11 text-sm font-semibold rounded-sm bg-[#2563EB] text-white cursor-pointer hover:border-1 hover:border-[#2563EB] hover:bg-transparent hover:text-[#2563EB] transition-all">
+                            <motion.button {...buttonHover} className="mt-5 w-full h-11 text-sm font-semibold rounded-lg bg-[#14B8A6] text-white cursor-pointer hover:border-1 hover:border-[#14B8A6] hover:bg-transparent hover:text-[#14B8A6] transition-all">
                                 {data.btn_text}
                             </motion.button>
                         </motion.div>

@@ -105,7 +105,7 @@ export default function Pricings(){
                                 {pricing.title}
                             </h3>
                             <div className="w-20 h-15 flex flex-col">
-                                <h3 className="text-lg text-right font-bold text-blue-500">
+                                <h3 className="text-lg text-right font-bold text-[#14B8A6]">
                                     ${pricing.price}
                                 </h3>
                                 <p className="text-[10px] text-right text-gray-400 font-semibold">
@@ -144,12 +144,12 @@ export default function Pricings(){
                     Join thousands of businesses who trust us with their logistics needs. Start with a free trial and see the difference our service makes
                 </p>
                 <div className="flex mt-5">
-                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md bg-blue-600 cursor-pointer mr-5">
+                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-lg bg-[#14B8A6] cursor-pointer mr-5">
                         <Link to="/contacts#contactSection">
                             Start Free Trial
                         </Link>
                     </motion.button>
-                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-blue-500 font-semibold rounded-md border-1 border-blue-500 cursor-pointer hover:bg-blue-600 hover:text-white hover:border-none">
+                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-[#0F172A] font-semibold rounded-lg border-1 border-[#0F172A] cursor-pointer">
                         <Link to="/contacts#scheduleDemo">
                             Schedule Demo
                         </Link>

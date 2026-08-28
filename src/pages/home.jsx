@@ -47,49 +47,49 @@ export default function Home(){
             id : 1,
             title : 'Reliability',
             text : 'We ensure your packages reach their destination safely and on time, every time.',
-            icon : <FaHandshake  className="w-14 h-14 p-4 rounded-full bg-[#DBEAFE] text-[#2563EB]"/>
+            icon : <FaHandshake  className="w-14 h-14 p-4 rounded-full bg-[#14B8A6]/12 text-[#14B8A6]"/>
         },
         {
             id : 2,
             title : 'Customer First',
             text : 'Our customers are at the heart of everything we do, driving our commitment to excellence',
-            icon : <MdEmojiPeople className="w-14 h-14 p-4 rounded-full bg-[#DBEAFE] text-[#2563EB]"/>
+            icon : <MdEmojiPeople className="w-14 h-14 p-4 rounded-full bg-[#14B8A6]/12 text-[#14B8A6]"/>
         },
         {
             id : 3,
             title : 'Sustainability',
             text : 'We are committed to eco-friendly practices and reducing our environmental footprint',
-            icon : <FaLeaf className="w-14 h-14 p-4 rounded-full bg-[#DBEAFE] text-[#2563EB]"/>
+            icon : <FaLeaf className="w-14 h-14 p-4 rounded-full bg-[#14B8A6]/12 text-[#14B8A6]"/>
         },
         {
             id : 4,
             title : 'Innovation',
             text : 'Continously investing in technology to provide cutting-edge logistics solutions',
-            icon : <GiLightBulb className="w-14 h-14 p-4 rounded-full bg-[#DBEAFE] text-[#2563EB]"/>
+            icon : <GiLightBulb className="w-14 h-14 p-4 rounded-full bg-[#14B8A6]/12 text-[#14B8A6]"/>
         }
     ]
     const choose = [
         {
             id : 1, 
-            icon : <FaShippingFast  className="w-12 h-11 p-2.5 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <FaShippingFast  className="w-12 h-11 p-2.5 rounded-md bg-[#14B8A6]/12 text-[#14B8A6] cursor-pointer"/>,
             title : 'Fast Delivery',
             text : 'Express shipping options with real-time tracking for urgent deliveries worldwide.'
         },
         {
             id : 2, 
-            icon : <RiShieldCheckLine className="w-12 h-11 p-2.5 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <RiShieldCheckLine className="w-12 h-11 p-2.5 rounded-md bg-[#14B8A6]/12 text-[#14B8A6] cursor-pointer"/>,
             title : 'Secure Transport',
             text : 'Advanced security measures and insurance coverage for all your valuable shipments.'
         },
         {
             id : 3, 
-            icon : <FiGlobe className="w-12 h-11 p-2.5 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <FiGlobe className="w-12 h-11 p-2.5 rounded-md bg-[#14B8A6]/12 text-[#14B8A6] cursor-pointer"/>,
             title : 'Global Network',
             text : 'Extensive worldwide network covering over 25 countries with local expertise.'
         },
         {
             id : 4, 
-            icon : <MdSupportAgent className="w-12 h-11 p-2.5 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <MdSupportAgent className="w-12 h-11 p-2.5 rounded-md bg-[#14B8A6]/12 text-[#14B8A6] cursor-pointer"/>,
             title : '24/7 Support',
             text : 'Round-the-clock customer support to assist you with all your logistics needs.'
         },
@@ -99,11 +99,11 @@ export default function Home(){
             <NavBar />
             <div className="w-full lg:h-[91vh] md:h-auto h-[85vh] relative overflow-hidden">
                 <img src={bgImg} className="w-full h-full object-cover"/>
-                <div className="absolute top-0 w-full h-full bg-[#111827]/70 inset-0 flex flex-col items-center justify-center">
+                <div className="absolute top-0 w-full h-full bg-[#0F172A]/70 inset-0 flex flex-col items-center justify-center">
                     <motion.div 
                         {...scrollRight}
-                        className="w-auto flex items-center justify-center px-5 py-1 rounded-full space-x-1.5 bg-blue-500/30 mt-15">
-                        <h4 className="text-[12px] font-bold text-white">Fast</h4><span className="w-1 h-1 bg-white rounded-full mt-0.5"></span><h4 className="text-[12px] font-bold text-white">Reliable</h4><span className="w-1 h-1 bg-white rounded-full mt-0.5"></span><h4 className="text-[12px] font-bold text-white">Nationwide</h4>
+                        className="w-auto flex items-center justify-center px-5 py-1 rounded-full space-x-1.5 bg-[#14B8A6] mt-15">
+                        <h4 className="text-[12px] italic font-semibold text-white/80">Fast</h4><span className="w-1 h-1 bg-white rounded-full mt-0.2"></span><h4 className="text-[12px] italic font-semibold text-white/80">Reliable</h4><span className="w-1 h-1 bg-white rounded-full mt-0.2"></span><h4 className="text-[12px] font-semibold italic text-white/80">Nationwide</h4>
                     </motion.div>
                     <motion.h1 {...scrollUp} className=" mt-3 lg:mt-0 text-3xl md:text-4xl lg:text-6xl text-white font-bold">
                         Ship Smarter.
@@ -119,22 +119,22 @@ export default function Home(){
                         Experience seamless logistics with cutting-edge technology
                     </motion.p>
                     <motion.div {...scrollLeft} className="flex mt-5 space-x-5">
-                        <motion.button {...buttonHover} className="px-4 md:px-8 py-2.5 rounded-md cursor-pointer bg-blue-500 text-white transition-all font-semibold text-sm">
+                        <motion.button {...buttonHover} className="px-4 md:px-8 py-2.5 rounded-md cursor-pointer bg-[#14B8A6] text-white transition-all font-semibold text-sm">
                             <Link to="/pricings#quoteSection">
                                 Send a Package
                             </Link>
                         </motion.button>
-                        <motion.button {...buttonHover} className="px-4 md:px-8 py-2 rounded-md cursor-pointer border-1 border-[#FACC15] text-[#FACC15] hover:bg-[#FACC15] hover:text-white transition-all text-sm font-semibold">
+                        <motion.button {...buttonHover} className="px-4 md:px-8 py-2 rounded-md cursor-pointer border-1 border-[#14B8A6] text-white transition-all text-sm font-semibold">
                             <Link to="/trackings#trackShipments">
                                 Track Shipments
                             </Link>
                         </motion.button>
                     </motion.div>
                     <div className="flex flex-col items-center rounded-lg p-3 mt-10 w-[85%] md:w-auto lg:w-[60%] bg-white space-y-2">
-                        <h3 className="text-[13px] font-semibold">Track Your Shipment</h3>
-                        <div className="w-full md:flex md:flex-row flex flex-col justify-around">
-                            <input type="text" placeholder="Enter tracking ID (e.g., LG123456789)" value={trackingCode} onChange={(e) => setTrackingCode(e.target.value.toUpperCase())} className="md:w-120 w-full md:h-10 h-12 rounded-lg px-3 text-sm mr-5 text-blue-500 outline-none border-1 border-gray-300 bg-white"/>
-                            <motion.button {...buttonHover} onClick={handleTrack} className="text-sm md:w-40 mt-4 md:mt-0 lg:h-full md:h-10 h-12 rounded-sm bg-blue-500 font-semibold text-white cursor-pointer hover:bg-transparent hover:border-1 hover:border-blue-500 hover:text-blue-500 transition-all">
+                        <h3 className="text-[13px] font-semibold text-[#0F172A]">Track Your Shipment</h3>
+                        <div className="w-full md:flex md:flex-row flex flex-col justify-around mb-2">
+                            <input type="text" placeholder="Enter tracking ID (e.g., LG123456789)" value={trackingCode} onChange={(e) => setTrackingCode(e.target.value.toUpperCase())} className="md:w-120 w-full md:h-10 h-12 rounded-lg px-3 text-sm mr-5 text-[#0F172A] border-1  border-gray-200 bg-white outline-none focus:border-[#0F172A] focus:ring-2 focus:ring-[#0F172A]/20 transition-all duration-200"/>
+                            <motion.button {...buttonHover} onClick={handleTrack} className="outline-none text-sm md:w-50 mt-4 md:mt-0 lg:h-full md:h-10 h-12 rounded-lg bg-[#14B8A6] font-semibold text-white cursor-pointer transition-all">
                                 Track Package
                             </motion.button>
                         </div>
@@ -164,34 +164,34 @@ export default function Home(){
             <motion.section {...scrollUp} ref={ref} className="bg-[#F9FAFB] py-10">
                 <div className="w-full text-center h-auto grid grid-cols-2 lg:grid-cols-4 gap-5">
                     <div>
-                        <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#2563EB]">
+                        <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#14B8A6]">
                             {inView ? <CountUp end={50000} duration={5} /> :0}+
                         </h2>
-                        <p className="text-gray-600 mt-2 text-xs md:text-xs font-semibold">
+                        <p className="text-[#0F172A] mt-2 text-xs md:text-xs font-semibold">
                             Packages Delivered
                         </p>
                     </div>
                     <div>
-                        <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#2563EB]">
+                        <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#14B8A6]">
                             {inView ? <CountUp end={25} duration={5} /> :0}+
                         </h2>
-                        <p className="text-gray-600 mt-2 text-xs md:text-xs font-semibold">
+                        <p className="text-[#0F172A] mt-2 text-xs md:text-xs font-semibold">
                             Country Served
                         </p>
                     </div>
                     <div>
-                        <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#2563EB]">
+                        <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#14B8A6]">
                             {inView ? <CountUp end={500} duration={5} /> :0}+
                         </h2>
-                        <p className="text-gray-600 mt-2 text-xs md:text-xs font-semibold">
+                        <p className="text-[#0F172A] mt-2 text-xs md:text-xs font-semibold">
                             Happy Clients
                         </p>
                     </div>
                     <div>
-                        <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#2563EB]">
+                        <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold text-[#14B8A6]">
                             {inView ? <CountUp end={15} duration={5} /> :0} Years
                         </h2>
-                        <p className="text-gray-600 mt-2 text-xs md:text-xs font-semibold">
+                        <p className="text-[#0F172A] mt-2 text-xs md:text-xs font-semibold">
                             Experience
                         </p>
                     </div>
@@ -199,7 +199,7 @@ export default function Home(){
             </motion.section>
             <About_Us />
             <div className="w-full h-auto flex flex-col items-center bg-white py-5 overflow-hidden my-10">
-                <motion.h2 {...scrollUp} className="font-bold text-2xl">
+                <motion.h2 {...scrollUp} className="font-bold text-2xl  text-[#0F172A]">
                     Our Core Values
                 </motion.h2>
                 <motion.p {...scrollUpDelay} className="text-sm text-gray-400 mt-2">
@@ -209,7 +209,7 @@ export default function Home(){
                     {values.map((values) =>(
                         <motion.div {...scrollLeft} className="w-full p-8 flex flex-col items-center">
                             {values.icon}
-                            <h3 className="mt-3 text-sm font-semibold">
+                            <h3 className="mt-3 text-sm font-semibold text-[#0F172A]">
                                 {values.title}
                             </h3>
                             <p className="text-xs text-center text-gray-400 mt-2">
@@ -222,7 +222,7 @@ export default function Home(){
             </div>
             <Services />
             <div className="bg-white w-full lg:h-120 h-auto flex flex-col items-center py-10 mt-10 overflow-hidden px-5">
-                <motion.h2 {...scrollUp} className="text-xl md:text-3xl lg:text-3xl font-bold mb-3 text-[#2563EB]">
+                <motion.h2 {...scrollUp} className="text-xl md:text-3xl lg:text-3xl font-bold mb-3 text-[#14B8A6]">
                     The ShiftEase Advantage
                 </motion.h2>
                 <motion.p {...scrollUpDelay} className="md:w-130 w-90 text-center text-gray-600 text-xs md:text-sm">
@@ -232,7 +232,7 @@ export default function Home(){
                     {choose.map((data) =>(
                         <motion.div {...scrollLeft} {...cardHover} className="w-full shadow-md rounded-md p-5 flex flex-col">
                             {data.icon}
-                            <h2 className="my-3 font-semibold text-sm">
+                            <h2 className="my-3 font-semibold text-sm text-[#0F172A]">
                                 {data.title}
                             </h2>
                             <p className="text-sm mb-5">

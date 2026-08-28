@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function CTA(){
     return(
         <>
-            <motion.div {...scrollUp} className="w-full h-70 bg-[#2563EB] flex flex-col items-center justify-center overflow-hidden">
+            <motion.div {...scrollUp} className="w-full h-70 bg-[#14B8A6] flex flex-col items-center justify-center overflow-hidden">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                     Ready to Ship with Confidence?
                 </h2>
@@ -12,12 +12,12 @@ export default function CTA(){
                     Join thousands of businesses who trust us with their logistics needs. Get started today with a free quote.
                 </p>
                 <div className="flex mt-5">
-                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md bg-[#FACC15] cursor-pointer mr-5">
+                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-lg bg-[#0F172A] cursor-pointer mr-5">
                         <Link to="/pricings#quoteSection">
                             Get Free Quote
                         </Link>
                     </motion.button>
-                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md border-1 border-white cursor-pointer hover:bg-[#FACC15] hover:border-none transition-all">
+                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-lg border-1 border-white cursor-pointer transition-all">
                         <Link to="/contacts#contactSection">
                             Contact Sales
                         </Link>

@@ -143,28 +143,28 @@ export default function Contacts(){
                         <div className="w-full h-auto md:flex md:flex-row md:justify-between md:items-center mb-5">
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17 mb-3 md:mb-0">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Full Name *</label>
-                                <input type="text" name="full_name" value={contactsData.full_name} onChange={handleChange} required placeholder="Enter your full name" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
+                                <input type="text" name="full_name" value={contactsData.full_name} onChange={handleChange} required placeholder="Enter your full name" className="w-full h-10 border-1 border-slate-200 rounded-md px-2.5 text-sm outline-none focus:border-[#0F172A] focus:ring-2 focus:ring-[#0F172A]/20 transition-all duration-200"/>
                             </div>
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17 mb-3 md:mb-0">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Email Address *</label>
-                                <input type="text" name="email" value={contactsData.email} onChange={handleChange} required placeholder="Enter your email" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
+                                <input type="text" name="email" value={contactsData.email} onChange={handleChange} required placeholder="Enter your email" className="w-full h-10 border-1 border-slate-200 rounded-md px-2.5 text-sm outline-none focus:border-[#0F172A] focus:ring-2 focus:ring-[#0F172A]/20 transition-all duration-200"/>
                             </div>
                             
                         </div>
                         <div className="w-full h-auto md:flex md:flex-row md:justify-between md:items-center mb-5">
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17 mb-3 md:mb-0">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Phone Number</label>
-                                <input type="text" maxLength={15} name="phone_number" value={contactsData.phone_number} onChange={handleChange} required placeholder="Enter your phone number" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
+                                <input type="text" maxLength={15} name="phone_number" value={contactsData.phone_number} onChange={handleChange} required placeholder="Enter your phone number" className="w-full h-10 border-1 border-slate-200 rounded-md px-2.5 text-sm outline-none focus:border-[#0F172A] focus:ring-2 focus:ring-[#0F172A]/20 transition-all duration-200"/>
                             </div>
                             <div className="flex flex-col md:w-[48%] w-full md:h-15 h-17">
                                 <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Company Name</label>
-                                <input type="text" name="company_name" value={contactsData.company_name} onChange={handleChange} required placeholder="Enter your company name" className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"/>
+                                <input type="text" name="company_name" value={contactsData.company_name} onChange={handleChange} required placeholder="Enter your company name" className="w-full h-10 border-1 border-slate-200 rounded-md px-2.5 text-sm outline-none focus:border-[#0F172A] focus:ring-2 focus:ring-[#0F172A]/20 transition-all duration-200"/>
                             </div>
                             
                         </div>
                         <div className="flex flex-col w-full md:h-15 h-17 md:mb-2 mb-3">
                             <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Service Interest</label>
-                            <select type="text" name="service" value={contactsData.service} onChange={handleChange} required className="w-full h-full rounded-sm px-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white">
+                            <select type="text" name="service" value={contactsData.service} onChange={handleChange} required className="w-full h-10 border-1 border-slate-200 rounded-md px-2.5 text-sm outline-none focus:border-[#0F172A] focus:ring-2 focus:ring-[#0F172A]/20 transition-all duration-200">
                                 <option value="" disabled>Select a service</option>
                                 <option value="Freight Transport">Freight Transport</option>
                                 <option value="WareHousing">WareHousing</option>
@@ -175,10 +175,10 @@ export default function Contacts(){
                         </div>
                         <div className="flex flex-col w-full h-35 mb-5">
                             <label htmlFor="" className="text-xs text-gray-700 font-semibold mb-1">Message *</label>
-                            <textarea name="message" maxLength={255} value={contactsData.message} onChange={handleChange} required placeholder="Tell us about your logistics needs.." className="w-full h-full rounded-sm p-3 text-[13px] text-gray-500 outline-none border-1 border-gray-300 hover:border-2 hover:border-blue-200 transition-all bg-white"></textarea>
+                            <textarea name="message" maxLength={255} value={contactsData.message} onChange={handleChange} required placeholder="Tell us about your logistics needs.." className="w-full h-full pt-2 border-1 border-slate-200 rounded-md px-2.5 text-sm outline-none focus:border-[#0F172A] focus:ring-2 focus:ring-[#0F172A]/20 transition-all duration-200"></textarea>
                         </div>
-                        <motion.button {...buttonHover} type="submit" className="w-full h-12 rounded bg-blue-500 text-white text-sm font-semibold cursor-pointer flex items-center justify-center">
-                            <FaPaperPlane  className="mr-1"/>Send Message
+                        <motion.button {...buttonHover} type="submit" className="w-full h-12 rounded-lg bg-[#14B8A6] text-white text-sm font-semibold cursor-pointer flex items-center justify-center">
+                            Send Message <FaPaperPlane  className="ml-2"/>
                         </motion.button>
                     </form>
                 </div>
@@ -187,7 +187,7 @@ export default function Contacts(){
                         Get in Touch
                     </h3>
                     <div className="flex py-3 mb-4">
-                        <FaMapMarkedAlt className="w-10 h-10 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer" />
+                        <FaMapMarkedAlt className="w-10 h-10 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-md cursor-pointer" />
                         <div className="flex flex-col ml-2">
                             <h3 className="text-sm font-semibold">
                                 Our Location
@@ -199,44 +199,44 @@ export default function Contacts(){
                         
                     </div>
                     <div className="flex py-3 mb-4">
-                        <FaPhoneAlt className="w-10 h-10 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer" />
+                        <FaPhoneAlt className="w-10 h-10 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-md cursor-pointer" />
                         <div className="flex flex-col ml-2">
                             <h3 className="text-sm font-semibold">
                                 Phone Numbers
                             </h3>
-                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
+                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#0F172A]">
                                 <a href="tel:+2349131580378">
                                     +234 913 1580 378
                                 </a>
                             </p>
-                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
+                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#0F172A]">
                                 <a href="tel:+2349131580378">
                                     +234 913 1580 378
                                 </a>
                             </p>
-                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
+                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#0F172A]">
                                 Toll Free: 1-800-LOGISTICS
                             </p>
                         </div>
                         
                     </div>
                     <div className="flex py-3 mb-4">
-                        <FaEnvelope className="w-10 h-10 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer" />
+                        <FaEnvelope className="w-10 h-10 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-md cursor-pointer" />
                         <div className="flex flex-col ml-2">
                             <h3 className="text-sm font-semibold">
                                 Email Addresses
                             </h3>
-                            <p className="text-[12px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
+                            <p className="text-[12px] text-gray-500 mt-1 font-semibold hover:text-[#0F172A]">
                                 <a href="mailto:shiftease@gmail.com">
                                     shiftease@gmail.com
                                 </a>
                             </p>
-                            <p className="text-[12px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
+                            <p className="text-[12px] text-gray-500 mt-1 font-semibold hover:text-[#0F172A]">
                                 <a href="mailto:shiftease@gmail.com">
                                     shiftease2@gmail.com
                                 </a>
                             </p>
-                            <p className="text-[12px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
+                            <p className="text-[12px] text-gray-500 mt-1 font-semibold hover:text-[#0F172A]">
                                 <a href="mailto:webfyre@gmail.com">
                                     webfyre@gmail.com
                                 </a>
@@ -245,18 +245,18 @@ export default function Contacts(){
                         
                     </div>
                     <div className="flex py-3">
-                        <FaClock className="w-10 h-10 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer" />
+                        <FaClock className="w-10 h-10 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-md cursor-pointer" />
                         <div className="flex flex-col ml-2">
                             <h3 className="text-sm font-semibold">
                                 Business Hours
                             </h3>
-                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
+                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#0F172A]">
                                 Monday - Friday: 8:00 AM - 6:00 PM
                             </p>
-                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
+                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#0F172A]">
                                 Saturday 9:00 AM - 4:00 PM
                             </p>
-                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#2563EB]">
+                            <p className="text-[11px] text-gray-500 mt-1 font-semibold hover:text-[#0F172A]">
                             Sunday: Emergency Only
                             </p>
                             
@@ -279,19 +279,19 @@ export default function Contacts(){
                                 {office.city}
                             </h2>
                             <p className="mt-3 flex items-center text-[12px]">
-                                < FaMapMarkedAlt className="w-3 h-3 text-blue-500 mr-1"/> {office.address}
+                                < FaMapMarkedAlt className="w-3 h-3 text-[#14B8A6] mr-1"/> {office.address}
                             </p>
                             <p className="mt-3 flex items-center text-[12px] font-semibold">
-                                < FaPhoneAlt className="w-3 h-3 text-blue-500 mr-1"/> <a href={`tel:${office.phone}`}>{office.phone}</a>
+                                < FaPhoneAlt className="w-3 h-3 text-[#14B8A6] mr-1"/> <a href={`tel:${office.phone}`}>{office.phone}</a>
                             </p>
                             <p className="mt-3 flex items-center text-[12px] mb-4">
-                                < FaUser className="w-3 h-3 text-blue-500 mr-1"/>Manager : {office.role}
+                                < FaUser className="w-3 h-3 text-[#14B8A6] mr-1"/>Manager : {office.role}
                             </p>
                         </motion.div>
                     ))}
                 </div>
             </div>
-            <div className="w-full flex flex-col items-center bg-[#2563EB] py-10" id="tracking">
+            <div className="w-full flex flex-col items-center bg-[#14B8A6] py-10" id="tracking">
                 <motion.h2 {...scrollUp} className="text-xl md:text-2xl lg:text-3xl font-bold text-white">
                     Frequently Asked Questions
                 </motion.h2>
@@ -300,7 +300,7 @@ export default function Contacts(){
                 </motion.p>
                 <div className="lg:w-[85%] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 p-5">
                     {faq.map((faqs) =>(
-                        <motion.div {...scrollLeft} {...cardHover} className="bg-[#1D4ED8] rounded-md p-5">
+                        <motion.div {...scrollLeft} {...cardHover} className="bg-[#0F172A]/30 rounded-md p-5">
                             <h3 className="text-white text-sm font-semibold">
                                 {faqs.question}
                             </h3>

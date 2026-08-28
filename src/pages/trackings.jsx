@@ -26,37 +26,37 @@ export default function Trackings(){
         {
             id : 1,
             title : 'Mobile Notification',
-            icon : <FaBell   className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <FaBell   className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-lg cursor-pointer"/>,
             text : 'Get instant SMS and email updatesabout your shipment status and delivery confirmations',
         },
         {
             id : 2,
             title : 'Live GPS Tracking',
-            icon : <FaLocationArrow  className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer" />,
+            icon : <FaLocationArrow  className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-lg cursor-pointer" />,
             text : 'Track your package in real-time with GPS location updatesand estimated arrival times'
         },
         {
             id : 3,
             title : 'Delivery Proof',
-            icon : <FaClipboardCheck   className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <FaClipboardCheck   className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-lg cursor-pointer"/>,
             text : 'Recieve photo confirmation and digital signatures upon successful delivery',
         },
         {
             id : 4,
             title : 'Delivery Scheduling',
-            icon : <FaCalendarCheck   className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <FaCalendarCheck   className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-lg cursor-pointer"/>,
             text : 'Choose convinient delivery windows and reschedule deliveries as needed.'
         },
         {
             id : 5,
             title : 'Secure Tracking',
-            icon : <FaShieldAlt   className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <FaShieldAlt   className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-lg cursor-pointer"/>,
             text : 'Your tracking information is protected with enterprise-grade security measures.'
         },
         {
             id : 6,
             title : 'Support Integration',
-            icon : <FaHeadset className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <FaHeadset className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-lg cursor-pointer"/>,
             text : 'Direct access to customer support through the tracking interface for immediate assistance'
         },
 
@@ -89,7 +89,7 @@ export default function Trackings(){
                     ))}
                 </div>
             </div>
-            <motion.div {...scrollUp} className="w-full h-70 bg-[#2563EB] flex flex-col items-center justify-center overflow-hidden">
+            <motion.div {...scrollUp} className="w-full h-70 bg-[#14B8A6] flex flex-col items-center justify-center overflow-hidden">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                     Need Help with Tracking?
                 </h2>
@@ -97,12 +97,12 @@ export default function Trackings(){
                     Our customer support is available 24/7 to assist you with any tracking questions or delivery concerns
                 </p>
                 <div className="flex mt-5">
-                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md bg-[#FACC15] cursor-pointer mr-5">
+                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md bg-[#0F172A] cursor-pointer mr-5">
                         <Link to="/contacts#contactSection">
                             Contact Support
                         </Link>
                     </motion.button>
-                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md border-1 border-white cursor-pointer hover:bg-[#FACC15] hover:border-none transition-all">
+                    <motion.button {...buttonHover} className="px-6 py-2.5 text-sm text-white font-semibold rounded-md border-1 border-white cursor-pointer transition-all">
                         <Link to="/contacts#tracking">
                             Tracking FAQ
                         </Link>

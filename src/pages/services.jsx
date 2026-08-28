@@ -43,7 +43,7 @@ export default function Service(){
                 "Real-time tracking",
             ],
             icon: (
-                <FaShoppingCart className="w-12 h-12 p-3.5 bg-white rounded-md text-[#2563EB] shadow-md" />
+                <FaShoppingCart className="w-12 h-12 p-3.5 bg-white rounded-md text-[#14B8A6] shadow-md" />
             ),
         },
 
@@ -59,7 +59,7 @@ export default function Service(){
                 "Distribution",
             ],
             icon: (
-                <GiFactory className="w-12 h-12 p-3.5 bg-white rounded-md text-[#2563EB] shadow-md" />
+                <GiFactory className="w-12 h-12 p-3.5 bg-white rounded-md text-[#14B8A6] shadow-md" />
             ),
         },
 
@@ -75,7 +75,7 @@ export default function Service(){
                 "Time-sensitive delivery",
             ],
             icon: (
-                <FaBriefcaseMedical className="w-12 h-12 p-3.5 bg-white rounded-md text-[#2563EB] shadow-md" />
+                <FaBriefcaseMedical className="w-12 h-12 p-3.5 bg-white rounded-md text-[#14B8A6] shadow-md" />
             ),
         },
 
@@ -91,7 +91,7 @@ export default function Service(){
                 "Distribution support",
             ],
             icon: (
-                <FaCarSide className="w-12 h-12 p-3.5 bg-white rounded-md text-[#2563EB] shadow-md" />
+                <FaCarSide className="w-12 h-12 p-3.5 bg-white rounded-md text-[#14B8A6] shadow-md" />
             ),
         },
 
@@ -107,7 +107,7 @@ export default function Service(){
                 "Secure handling",
             ],
             icon: (
-                <FaMicrochip className="w-12 h-12 p-3.5 bg-white rounded-md text-[#2563EB] shadow-md" />
+                <FaMicrochip className="w-12 h-12 p-3.5 bg-white rounded-md text-[#14B8A6] shadow-md" />
             ),
         },
 
@@ -123,7 +123,7 @@ export default function Service(){
                 "Inventory movement",
             ],
             icon: (
-                <GiForkKnifeSpoon className="w-12 h-12 p-3.5 bg-white rounded-md text-[#2563EB] shadow-md" />
+                <GiForkKnifeSpoon className="w-12 h-12 p-3.5 bg-white rounded-md text-[#14B8A6] shadow-md" />
             ),
         },
 
@@ -139,7 +139,7 @@ export default function Service(){
                 "Order fulfillment",
             ],
             icon: (
-                <GiClothes className="w-12 h-12 p-3.5 bg-white rounded-md text-[#2563EB] shadow-md" />
+                <GiClothes className="w-12 h-12 p-3.5 bg-white rounded-md text-[#14B8A6] shadow-md" />
             ),
         },
 
@@ -155,44 +155,44 @@ export default function Service(){
                 "Last-mile delivery",
             ],
             icon: (
-                <FaMobileAlt className="w-12 h-12 p-3.5 bg-white rounded-md text-[#2563EB] shadow-md" />
+                <FaMobileAlt className="w-12 h-12 p-3.5 bg-white rounded-md text-[#14B8A6] shadow-md" />
             ),
         },
     ];
     const add_services = [
         {
             id : 1,
-            icon : <RiShieldCheckLine  className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <RiShieldCheckLine  className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-md cursor-pointer"/>,
             title : 'Insurance & Protection',
             text : 'Comprehensive cargo insurance and protection plans for valuable shipments',
         },
         {
             id : 2,
-            icon : <FaBolt className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <FaBolt className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-md  cursor-pointer"/>,
             title : 'Express Services',
             text : 'Urgent delivery options with guaranteed time-definite delivery windows.',
         },
         {
             id : 3,
-            icon : <FaHeadset className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <FaHeadset className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-md cursor-pointer"/>,
             title : 'Dedicated Support',
             text : '24/7 customer support with dedicated account managers for enterprise clients',
         },
         {
             id : 4,
-            icon : <RiBarChartBoxLine className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <RiBarChartBoxLine className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-md  cursor-pointer"/>,
             title : 'Analytics & Reporting',
             text : 'Detailed shipping analytics and performance reports for business optimization.',
         },
         {
             id : 5,
-            icon : <TbTruckDelivery className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <TbTruckDelivery className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-md cursor-pointer"/>,
             title : 'Sustainable Logistics',
             text : 'Eco-friendly shipping options with carbon-neutral delivery alternatives',
         },
         {
             id : 6,
-            icon : <FaMobileAlt className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-md text-[#2563EB] cursor-pointer"/>,
+            icon : <FaMobileAlt className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-md cursor-pointer"/>,
             title : 'Mobile Tracking',
             text : 'Advanced mobile app for real-time tracking and shipment management',
         },
@@ -215,11 +215,11 @@ export default function Service(){
                     {...scrollUp}
                     className="w-full max-w-3xl text-center px-5"
                 >
-                    <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider">
+                    <p className="text-sm font-semibold text-[#14B8A6] uppercase tracking-wider">
                         What We Offer
                     </p>
 
-                    <h2 className="font-bold text-3xl md:text-4xl text-gray-800 mt-2">
+                    <h2 className="font-bold text-3xl md:text-4xl text-[#0F172A] mt-2">
                         Our Core Services
                     </h2>
 
@@ -251,15 +251,15 @@ export default function Service(){
 
                         <div className="w-auto flex items-center">
                             <FaShippingFast
-                                className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-lg text-[#2563EB]"
+                                className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-lg"
                             />
 
                             <div className="ml-5">
-                                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+                                <p className="text-xs font-semibold uppercase tracking-wider text-[#14B8A6]">
                                     Transportation
                                 </p>
 
-                                <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                                <h2 className="text-2xl md:text-3xl font-bold text-[#0F172A]">
                                     Freight Transport
                                 </h2>
                             </div>
@@ -295,7 +295,7 @@ export default function Service(){
                                 "Business logistics support",
                             ].map((data, index) => (
                                 <div key={index} className="flex items-start">
-                                    <FaCheck className="w-3 h-3 text-lime-500  mt-1 mr-2 shrink-0" />
+                                    <FaCheck className="w-3 h-3 text-[#14B8A6]  mt-1 mr-2 shrink-0" />
 
                                     <p className="text-xs md:text-[13px] text-gray-500">
                                         {data}
@@ -308,7 +308,7 @@ export default function Service(){
                             <motion.a
                                 {...buttonHover}
                                 href="#additionalServices"
-                                className="px-6 py-2.5 text-sm flex items-center justify-center font-semibold rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-all"
+                                className="px-6 py-2.5 text-sm flex items-center justify-center font-semibold rounded-md bg-[#14B8A6] text-white transition-all"
                             >
                                 Learn More
                             </motion.a>
@@ -316,7 +316,7 @@ export default function Service(){
                             <motion.a
                                 {...buttonHover}
                                 href="/contacts"
-                                className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-blue-200 text-blue-600 hover:bg-blue-50 transition-all"
+                                className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-[#0F172A] text-[#0F172A] transition-all"
                             >
                                 Get a Quote
                             </motion.a>
@@ -346,11 +346,11 @@ export default function Service(){
 
                         <div className="w-auto flex items-center">
                             <FaWarehouse
-                                className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-lg text-[#2563EB]"
+                                className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-lg"
                             />
 
                             <div className="ml-5">
-                                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+                                <p className="text-xs font-semibold uppercase tracking-wider text-[#14B8A6]">
                                     Storage Solutions
                                 </p>
 
@@ -390,7 +390,7 @@ export default function Service(){
                                 "Business inventory support",
                             ].map((data, index) => (
                                 <div key={index} className="flex items-start">
-                                    <FaCheck className="w-3 h-3 text-lime-500 mt-1 mr-2 shrink-0" />
+                                    <FaCheck className="w-3 h-3 text-[#14B8A6] mt-1 mr-2 shrink-0" />
 
                                     <p className="text-xs md:text-[13px] text-gray-500">
                                         {data}
@@ -403,14 +403,14 @@ export default function Service(){
                             <motion.a
                                 {...buttonHover}
                                 href="#additionalServices"
-                                className="px-6 py-2.5 text-sm flex items-center justify-center font-semibold rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-all"
+                                className="px-6 py-2.5 text-sm flex items-center justify-center font-semibold rounded-md bg-[#14B8A6] text-white transition-all"
                             >
                                 Learn More
                             </motion.a>
                             <motion.a
                                 {...buttonHover}
                                 href="/contacts"
-                                className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-blue-200 text-blue-600 hover:bg-blue-50 transition-all"
+                                className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-[#0F172A] text-[#0F172A] transition-all"
                             >
                                 Talk to Us
                             </motion.a>
@@ -439,11 +439,11 @@ export default function Service(){
 
                         <div className="w-auto flex items-center">
                             <FaBoxOpen
-                                className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-lg text-[#2563EB]"
+                                className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-lg"
                             />
 
                             <div className="ml-5">
-                                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+                                <p className="text-xs font-semibold uppercase tracking-wider text-[#14B8A6]">
                                     Last-Mile Delivery
                                 </p>
 
@@ -482,7 +482,7 @@ export default function Service(){
                                 "Reliable last-mile fulfillment",
                             ].map((data, index) => (
                                 <div key={index} className="flex items-start">
-                                    <FaCheck className="w-3 h-3 text-lime-500 mt-1 mr-2 shrink-0" />
+                                    <FaCheck className="w-3 h-3 text-[#14B8A6] mt-1 mr-2 shrink-0" />
 
                                     <p className="text-xs md:text-sm text-gray-500">
                                         {data}
@@ -492,16 +492,17 @@ export default function Service(){
                         </div>
 
                         <div className="mt-7 flex flex-wrap gap-3">
-                            <a
+                            <motion.a
+                                {...buttonHover}
                                 href="#additionalServices"
-                                className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-all"
+                                className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md bg-[#14B8A6] text-white transition-all"
                             >
                                 Learn More
-                            </a>
+                            </motion.a>
                             <motion.a
                                 {...buttonHover}
                                 href="/contacts"
-                                className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-blue-200 text-blue-600 hover:bg-blue-50 transition-all"
+                                className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-[#0F172A] text-[#0F172A] transition-all"
                             >
                                 Get Started
                             </motion.a>
@@ -530,11 +531,11 @@ export default function Service(){
 
                         <div className="w-auto flex items-center">
                             <FaGlobeAmericas
-                                className="w-12 h-12 p-3 bg-[#DBEAFE] rounded-lg text-[#2563EB]"
+                                className="w-12 h-12 p-3 bg-[#14B8A6]/12 text-[#14B8A6] rounded-lg"
                             />
 
                             <div className="ml-5">
-                                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+                                <p className="text-xs font-semibold uppercase tracking-wider text-[#14B8A6]">
                                     Global Logistics
                                 </p>
 
@@ -573,7 +574,7 @@ export default function Service(){
                                 "Global logistics coordination",
                             ].map((data, index) => (
                                 <div key={index} className="flex items-start">
-                                    <FaCheck className="w-3 h-3 text-lime-500 mt-1 mr-2 shrink-0" />
+                                    <FaCheck className="w-3 h-3 text-[#14B8A6] mt-1 mr-2 shrink-0" />
 
                                     <p className="text-xs md:text-sm text-gray-500">
                                         {data}
@@ -583,16 +584,17 @@ export default function Service(){
                         </div>
 
                         <div className="mt-7 flex flex-wrap gap-3">
-                            <a
+                            <motion.a
+                                {...buttonHover}
                                 href="#additionalServices"
-                                className="px-6 py-2 flex items-center justify-center text-sm font-semibold rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-all"
+                                className="px-6 py-2 flex items-center justify-center text-sm font-semibold rounded-md bg-[#14B8A6] text-white transition-all"
                             >
                                 Learn More
-                            </a>
+                            </motion.a>
                             <motion.a
                                 {...buttonHover}
                                 href="/contacts"
-                                className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-blue-200 text-blue-600 hover:bg-blue-50 transition-all"
+                                className="px-6 py-2 text-sm font-semibold flex items-center justify-center rounded-md border border-[#0F172A] text-[#0F172A] transition-all"
                             >
                                 Contact Us
                             </motion.a>
@@ -602,7 +604,7 @@ export default function Service(){
                 </div>
             </div>
             <div className="w-full bg-[#F9FAFB] flex flex-col py-10 items-center" id="additionServices">
-                <motion.h2 {...scrollUp} className="font-bold text-2xl">
+                <motion.h2 {...scrollUp} className="font-bold text-2xl text-[#0F172A]">
                     Additional Services
                 </motion.h2>
                 <motion.p {...scrollUpDelay} className="text-sm text-gray-400 mt-2">
@@ -612,7 +614,7 @@ export default function Service(){
                     {add_services.map((services) => (
                         <motion.div {...scrollLeft} {...cardHover} className="w-full bg-white flex flex-col p-5 shadow-sm rounded-md">
                             {services.icon}
-                            <h3 className="my-2 font-semibold text-sm">
+                            <h3 className="my-2 font-semibold text-sm text-[#0F172A]">
                                 {services.title}
                             </h3>
                             <p className="text-xs text-gray-600 mb-2">
@@ -629,11 +631,11 @@ export default function Service(){
         {...scrollUp}
         className="max-w-3xl text-center px-5"
     >
-        <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider">
+        <p className="text-sm font-semibold text-[#14B8A6] uppercase tracking-wider">
             Industries We Serve
         </p>
 
-        <h2 className="font-bold text-3xl md:text-4xl text-gray-800 mt-2">
+        <h2 className="font-bold text-3xl md:text-4xl text-[#0F172A] mt-2">
             Logistics Solutions Built for Your Industry
         </h2>
 
@@ -715,7 +717,7 @@ export default function Service(){
                         {/* CTA */}
                         <a
                             href="/contacts"
-                            className="inline-flex items-center mt-6 text-sm font-semibold text-[#2563EB] group-hover:text-blue-700 transition-colors"
+                            className="inline-flex items-center mt-6 text-sm font-semibold text-[#14B8A6] group-hover:text-[#0F172A] transition-colors"
                         >
                             Discuss your logistics needs
                             <span className="ml-2 group-hover:translate-x-1 transition-transform">
@@ -733,7 +735,7 @@ export default function Service(){
             {/* Bottom CTA */}
             <motion.div
                 {...scrollUp}
-                className="w-[calc(100%-40px)] max-w-6xl mt-14 bg-[#EFF6FF] rounded-2xl px-6 py-10 md:px-12 text-center"
+                className="w-[calc(100%-40px)] max-w-6xl mt-14 bg-[#14B8A6]/12 rounded-2xl px-6 py-10 md:px-12 text-center"
             >
 
                 <h3 className="text-2xl font-bold text-gray-800">
@@ -748,7 +750,7 @@ export default function Service(){
 
                 <a
                     href="/contacts"
-                    className="inline-block mt-6 px-7 py-3 bg-[#2563EB] hover:bg-blue-700 text-white text-sm font-semibold rounded-md transition-all"
+                    className="inline-block mt-6 px-7 py-3 bg-[#14B8A6] hover:bg-blue-700 text-white text-sm font-semibold rounded-md transition-all"
                 >
                     Talk to Our Team
                 </a>
