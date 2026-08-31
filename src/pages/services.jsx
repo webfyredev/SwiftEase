@@ -748,12 +748,13 @@ export default function Service(){
                     solution tailored to your specific needs.
                 </p>
 
-                <a
+                <motion.a
+                    {...buttonHover}
                     href="/contacts"
-                    className="inline-block mt-6 px-7 py-3 bg-[#14B8A6] hover:bg-blue-700 text-white text-sm font-semibold rounded-md transition-all"
+                    className="inline-block mt-6 px-7 py-3 bg-[#14B8A6] text-white text-sm font-semibold rounded-md transition-all"
                 >
                     Talk to Our Team
-                </a>
+                </motion.a>
 
             </motion.div>
 
