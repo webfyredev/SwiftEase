@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext"
 import api from "../../api/axios";
-import { LuArrowRight, LuCircleAlert, LuCircleCheck, LuHeadphones, LuPlus, LuX } from "react-icons/lu";
+import { LuArrowRight, LuCircleAlert, LuCircleCheck, LuHeadphones, LuLoader, LuMessageSquare, LuPlus, LuSend, LuX } from "react-icons/lu";
 import { motion } from 'framer-motion'
 import { buttonHover } from "../../effects/motions";
+import { useRef } from "react";
 
 
 const status_config = {
@@ -65,14 +66,14 @@ function Modal({ title, onClose, wide, children  }){
     }, []);
 
     return(
-        <div className="fixed inset-0 z-50 flex items-center justify=center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
             <div className={`relative bg-white rounded-2xl shadow-2xl w-full ${wide ? "max-w-2xl" : "max-w-lg"} max-h-[90vh] flex flex-col`}>
                 <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 flex-shrink-0">
                     <h2 className="font-bold text-gray-900 text-base">{title}</h2>
                     <button
                         onClick={onClose}
-                        className="p-1.5 rounded-lg hover:bg-gray-100 transition"
+                        className="p-1.5 rounded-lg hover:bg-gray-100 transition cursor-pointer"
                         >
                             <LuX size={17} className="text-gray-500" />
                     </button>
@@ -85,7 +86,7 @@ function Modal({ title, onClose, wide, children  }){
 function CreateTicketModal({onClose, onCreated, shipments }){
     const [form, setForm] = useState({ category : "delay", shipment: "", subject : "", description : ""});
     const [errors, setErrors] = useState({});
-    const [submitting, setSubmitting] = useState(false)
+    const [submitting, setSubmitting] = useState(false);
     const [ApiError, setApiError] = useState("");
 
     const set = (k, v) => {
@@ -115,14 +116,14 @@ function CreateTicketModal({onClose, onCreated, shipments }){
             onCreated(res.data);
             onClose();
         } catch (err){
-            setApiError(err.reponse?.data?.detail ?? Object.values(err.response?.data ?? {})[0]?.[0] ?? "Failed to create ticket")
+            setApiError(err.response?.data?.detail ?? Object.values(err.response?.data ?? {})[0]?.[0] ?? "Failed to create ticket")
         } finally{
             setSubmitting(false);
         }
     }
 
     return(
-        <Modal title="Create New Ticket" onClose={onclose}>
+        <Modal title="Create New Ticket" onClose={onClose}>
             <div className="px-6 py-5 space-y-4 overflow-y-auto">
                 <div>
                     <label className="text-sm font-medium text-gray-700 mb-1.5">Category</label>
@@ -130,10 +131,9 @@ function CreateTicketModal({onClose, onCreated, shipments }){
                         className="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#14B8A6]/20 bg-white"
                     >
                         {CATEGORIES.map((data) => (
-                            <option key={c.value} value={}></option>
+                            <option key={data.value} value={data.value}>{data.label}</option>
                         ))}
                     </select>
-
                 </div>
                 <div>
                     <label className="text-sm font-medium text-gray-700 mb-1.5">Related Shipment</label>
@@ -143,11 +143,10 @@ function CreateTicketModal({onClose, onCreated, shipments }){
                         <option value="">None</option>
                         {shipments.map((s) => (
                             <option key={s.id} value={s.id}>
-                                {s.shipment_code} - {s.receiver_name} ({s.status})
+                                {s.shipment_code} - {s.receiver_city} - ({s.status})
                             </option>
                         ))}
                     </select>
-                    
                 </div>
                 <div>
                     <label className="text-sm font-medium text-gray-700 mb-1.5">Subject</label>
@@ -163,7 +162,6 @@ function CreateTicketModal({onClose, onCreated, shipments }){
                             {errors.subject}
                         </p>
                     )}
-                    
                 </div>
                 <div>
                     <label className="text-sm font-medium text-gray-700 mb-1.5">Description</label>
@@ -180,13 +178,159 @@ function CreateTicketModal({onClose, onCreated, shipments }){
                     )}
                 </div>
                 {ApiError && (
-                    <div className="flex items-center gap-2 bg-red-50 text-red-500 text-xs roundedlg px-3 py-2">
-                        <LuCircleAlert />
+                    <div className="flex items-center gap-2 bg-red-50 text-red-500 text-xs rounded-lg px-3 py-2">
+                        <LuCircleAlert size={13} />
+                        {ApiError}
                     </div>
                 )}
+                <button
+                    onClick={handleSubmit}
+                    disabled = {submitting}
+                    className="w-full flex items-center cursor-pointer justify-center gap-2 bg-[#14B8A6] text-white py-3 rounded-xl text-sm font-semibold
+                    disabled:opacity-50 transition"
+                    >
+                    {submitting ? <><LuLoader size={15} className="animate-spin" /> Submitting...</> : "Submit Ticket"}
+                </button>
             </div>
         </Modal>
 
+    )
+}
+
+function ChatModal({ ticket, onClose, currentUser}) {
+    const [replies, setReplies] = useState(ticket.replies ?? [])
+    const [message, setMessage] = useState("");
+    const [sending, setSending] = useState(false)
+    const [error, setError] = useState("")
+    const bottomRef = useRef(null);
+
+    useEffect(() => {
+        bottomRef.current?.scrollIntoView({ behavior : "smooth"});
+    }, [replies]);
+    
+    const handleSend = async () => {
+        const text = message.trim();
+        if(!text) return;
+        setSending(true)
+        setError("");
+
+        try{
+            const res = await api.post(`/support/ticket/${ticket.id}/reply/`, { message : text,});
+            setReplies((prev) => [...prev, res.data]);
+            setMessage("");
+        } catch (err) {
+            setError(err.response?.data?.detail ?? "Failed to send message. ");
+        } finally {
+            setSending(false);
+        }
+    }
+
+    const handleKeyDown = (e) => {
+        if(e.key  === "Enter" && !e.shiftkey) {
+            e.preventDefault();
+            handleSend();
+        }
+    }
+    const formatTime = (ts) => 
+        new Date(ts).toLocaleString("en-GB", { 
+            month:"short", day:"numeric", hour:"2-digit", minute : "2-digit"}
+        )
+    return (
+        <Modal
+            title={`${ticket.ticket_no} - ${ticket.subject}`}
+            onClose={onClose}
+            wide
+        >
+            <div className="flex items-center gap-3 px-6 py-2.5 border-b border-gray-100 flex-shrink-0">
+                <StatusStyle status={ticket.status} />
+                <span className="text-sm text-gray-500">
+                    Category: {ticket.category_display ?? ticket.category}
+                </span>
+                <span className="ml-auto text-xs text-gray-400">
+                    {formatTime(ticket.created_at)}
+                </span>
+            </div>
+            <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4 min-h-0">
+                <div className="flex justify-end">
+                    <div className="max-w-[75%]">
+                        <p className="text-xs font-semibold text-[#14B8A6]/50 mb-1 text-right">
+                            {ticket.user_name}
+                        </p>
+                        <div className="bg-[#14B8A6] text-white rounded-2xl rounded-tr-sm px-3 py-2 text-sm leading-relaxed">
+                            {ticket.description}
+                        </div>
+                        <p className="text-[10px] text-gray-400 mt-1 text-right">
+                            {formatTime(ticket.created_at)}
+                        </p>
+                    </div>
+                </div>
+                {replies.map((reply) => {
+                    const isMe = !reply.is_staff;
+                    return(
+                        <div key={reply.id} className={`flex ${isMe ? "justify-end" : "justify-start"}`}>
+                            <div className="max-w-[75%]">
+                                <p className={`text-xs font-semibold mb-1 ${isMe ? "text-[#14B8A6]/80 text-right" : "text-gray-400"}`}>
+                                    {reply.author_name}
+                                    {reply.is_staff && (
+                                        <span className="ml-1 text-[10px] bg-[#14B8A6]/20 text-[#14B8A6] px-1.5 py-1 rounded-full">
+                                                SwiftEase Support
+                                        </span>
+                                    )}
+                                </p>
+                                <div className={`rounded-2xl px-4 py-3 text-sm leading-relaxed mt-2 ${isMe ? "bg-[#14B8A6] text-white rounded-tr-sm" : "bg-gray-100 text-gray-800 rounded-tl-sm"}`}>
+                                    {reply.message}
+                                </div>
+                                <p className={`text-[10px] text-gray-400 mt-1 ${isMe ? "text-right" : ""}`}>
+                                    {formatTime(reply.created_at)}
+                                </p>
+                            </div>
+                        </div>
+                    )
+                })}
+                {replies.length === 0 && (
+                    <div className="text-center py-6">
+                        <LuMessageSquare size={28} className="text-gray-200 mx-auto mb-2" />
+                        <p className="text-xs text-gray-400">No replies yet. We'll respond shortly.</p>
+                    </div>
+                )}
+                <div ref={bottomRef} />
+            </div>
+            <div className="px-6 py-4 border-t border-gray-100 flex-shrink-0">
+                {error && (
+                    <p className="text-red-500 text-xs mb-2 flex items-center gap-1">
+                        <LuCircleAlert size={11} /> {error}
+                    </p>
+                )}
+                {ticket.status === "closed" ? (
+                    <p className="text-center text-sm text-gray-400 py-2">
+                        This ticket is closed. Create a new ticket if you need further assistance.
+                    </p>
+                ) : (
+                    <div className="flex gap-3 items-end">
+                        <textarea
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            onKeyDown={handleKeyDown}
+                            rows={1}
+                            placeholder="Type your reply... (Enter to send)"
+                            className="flex-1 px-4 py-2.5 rounded-xl border boder-gray-200 text-sm
+                            focus:outline-none focus:ring-2 focus:ring-[#14B8A6]/50 resize-none"
+                            style={{ minHeight: "44px", maxHeight : "120px"}}
+                        />
+
+                        <button
+                            onClick={handleSend}
+                            disabled={sending || !message.trim()}
+                            className="cursor-pointer flex items-center gap-2 bg-[#14B8A6] text-white px-4 py-2.5
+                            rounded-xl text-sm font-semibold disabled:opacity-50 transition flex-shrink-0"
+                        >
+                            {sending ? <LuLoader size={14} className="animate-spin" /> : <><LuSend size={14} /> Send</>}
+                        </button>
+                    </div>
+                )}
+            </div>
+
+        </Modal>
     )
 }
 export default function Support_Ticket(){
@@ -331,7 +475,30 @@ export default function Support_Ticket(){
                     </div>
                 </div>
                 {modal === "create" && (
-
+                    <CreateTicketModal
+                        onClose={() => setModal(null)}
+                        onCreated={handleCreated}
+                        shipments={shipments}
+                    />
+                )}
+                {modal === "chat" && (
+                    ticketLoading ? (
+                        <div className="fixed inset-0 z-50 flex items-center justify-center">
+                            <div className="absolute inset-0 bg-black/40" onClick={() => setModal(null)} />
+                            <div className="relative bg-white rounded-2xl p-10 flex items-center gap-3">
+                                <LuLoader size={18} className="animate-spin text-[#14B8A6]" />
+                                <span className="text-sm text-gray-600">
+                                    Loading ticket...
+                                </span>
+                            </div>
+                        </div>
+                    ) : activeTicket && (
+                        <ChatModal 
+                            ticket={activeTicket}
+                            onClose={() => { setModal(null); setActiveTicket(null); fetchTickets();}}
+                            currentUser={user}
+                        />
+                    )
                 )}
             </div>
         </>

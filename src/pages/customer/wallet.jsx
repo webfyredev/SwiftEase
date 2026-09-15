@@ -63,14 +63,18 @@ function Modal({title, onClose, children}){
 export default function Wallet(){
     const { user, setUser} = useAuth();
     const [searchParams, setSearchParams] = useSearchParams();
+    
     const [balance, setBalance] = useState(user?.wallet_balance ?? 0);
     const [unpaid, setUnpaid] = useState([]);
     const [transactions, setTransactions] = useState([]);
     const [txnloading, setTxnLoading] = useState(true);
+    
     const [modal, setModal] = useState(null);
+    
     const [topupAmount, setTopupAmount] = useState("")
     const [topuploading, setTopupLoading] = useState(false)
     const [topupError, setTopupError] = useState("")
+    
     const [selectedShipment, setSelectedShipment] = useState("")
     const [payLoading, setPayLoading] = useState(false)
     const [payError, setPayError] = useState("")
@@ -89,7 +93,7 @@ export default function Wallet(){
                 api.get("/payments/wallet/transactions/"),
             ]);
 
-            setBalance(summaryRes.data.wallet_balance)
+            setBalance(summaryRes.data.wallet_balance);
             setUnpaid(summaryRes.data.unpaid_shipments);
 
             const txnData = txnRes.data;
@@ -109,7 +113,7 @@ export default function Wallet(){
 
         setSearchParams({});
 
-        api.get(`/payments/wallet/topup/verify?reference=${ref}/`)
+        api.get(`/payments/wallet/topup/verify?reference=${ref}`)
         .then((res) => {
             setBalance(res.data.new_balance);
             if(setUser) setUser((u) => ({...u, wallet_balance: res.data.new_balance}));
@@ -139,7 +143,6 @@ export default function Wallet(){
             setTopupLoading(false)
         }
     }
-
 
 
     const handleWalletPay = async() => {
