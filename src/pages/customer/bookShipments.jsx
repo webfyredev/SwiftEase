@@ -550,7 +550,7 @@ export default function Book_Shipments(){
                             <motion.button
                                 {...buttonHover}
                                 onClick={next}
-                                className="flex items-center space-x-2 px-6 py-3 rounded-xl bg-[#14B8A6] text-white text-sm font-semibold transition cursor-pointer"
+                                className="flex items-center space-x-2 px-6 py-3 rounded-xl bg-gray-900 text-white text-sm font-semibold cursor-pointer"
                             >
                                 Continue <LuChevronRight  size={18}/>
                             </motion.button>

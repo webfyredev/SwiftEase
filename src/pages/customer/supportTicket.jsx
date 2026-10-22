@@ -402,7 +402,7 @@ export default function Support_Ticket(){
                     </div>
                 )}
 
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col space-y-2 md:space-y-0 md:flex-row md:items-center md:justify-between">
                     <div>
                         <h1 className="text-xl font-bold text-gray-900">Support Tickets</h1>
                         <p className="text-sm text-gray-400 mt-0.5">Track and manage your support requests</p>
@@ -410,7 +410,7 @@ export default function Support_Ticket(){
                     <motion.button
                         {...buttonHover}
                         onClick={() => setModal("create")}
-                        className="cursor-pointer flex items-center gap-2 bg-[#14B8A6] text-white px-5 py-2.5
+                        className="cursor-pointer flex items-center justify-center gap-2 bg-gray-900 text-white px-5 py-2.5
                         rounded-lg text-sm font-semibold"
                     >
                         <LuPlus size={15} /> Create New Ticket
@@ -419,7 +419,7 @@ export default function Support_Ticket(){
 
                 <div className="bg-white rounded-2xl shadow-xs border border-gray-100 overflow-hidden">
                     <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
+                        <table className="min-w-max w-full text-sm">
                             <thead>
                                 <tr className="border-b border-gray-100">
                                     {["Ticket No", "Category", "Subject", "Status", "Date", "Action"].map((data) => (

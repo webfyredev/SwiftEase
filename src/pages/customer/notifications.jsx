@@ -72,7 +72,7 @@ function NotifCard({ notif, onRead, onDelete}){
     const Icon = cfg.icon;
 
     return(
-        <div className={`flex gap-4 p-4 rounded-xl transition-all group ${!notif.is_read ? 
+        <div className={`flex md:flex-row flex-col gap-4 p-4 rounded-xl transition-all group ${!notif.is_read ? 
         "bg-[#14B8A6]/20 border-l-4 border-[#14B8A6]" : "bg-white border-l-4 border-transparent hover:bg-gray-50"}`}
         >
             <div className={`w-10 h-10 rounded-full flex items-center justify-center
@@ -207,7 +207,7 @@ export default function Notifications(){
                         <button
                             key={tab.value}
                             onClick={() => setActiveTab(tab.value)}
-                            className={`px-4 py-1.5 cursor-pointer rounded-lg text-sm font-medium transition
+                            className={`px-4 py-1.5 cursor-pointer rounded-lg text-[12px] md:text-sm font-medium transition
                                 ${activeTab === tab.value ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700"}
                                 `}
                         >

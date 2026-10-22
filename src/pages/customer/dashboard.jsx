@@ -97,10 +97,10 @@ export default function C_Dashboard(){
                 <div className="p-5 rounded-xl flex flex-col " style={{background: `radial-gradient(circle at 100% 0%, #14B8A6 0%, transparent 35%  ), linear-gradient(135deg, #0F172A , #134E4A )`}}>
                     <h4 className="text-white/70 text-sm">{currentDate}</h4>
                     <h1 className="text-2xl font-bold text-white my-1.5">{getGreeting()}, {firstName}</h1>
-                    <p className="text-white/70 text-sm mt-1">
+                    <p className="text-white/70 text-[12px] md:text-sm mt-1">
                         {data ? `You have ${data.stats.in_transit} shipment${data.stats.in_transit !== 1 ? "s" : ""} in transit and ${data.stats.pending_payment} pending payment${data.stats.pending_payment !== 1 ? 's' : ''}.` : "Loading your shipments.."}
                     </p>
-                    <div className="flex items-center space-x-4 mt-5">
+                    <div className="hidden md:flex items-center space-x-4 mt-5">
                         <motion.button
                         onClick={() => navigate("/customer/book_shipments")}
                             {...buttonHover}
@@ -121,11 +121,11 @@ export default function C_Dashboard(){
                 </div>
                 <div className="w-full grid grid-cols-2 gap-4">
                     {sh_data.map((dt, i) => (
-                        <div key={i} className="p-5 border-1 rounded-lg bg-white border-slate-100 flex space-x-4">
+                        <div key={i} className="p-5 border-1 rounded-lg bg-white border-slate-100 flex md:flex-row flex-col md:space-x-4 space-y-1 md:space-y-0">
                             <span className={`w-10 h-10 rounded-lg flex items-center justify-center ${dt.bg}`}>
                                 <dt.icon  className={`${dt.text} w-5 h-5`}/>
                             </span>
-                            <div>
+                            <div className="ml-1 md:ml-0">
                                 <h2 className="text-2xl font-bold">{dt.value} </h2>
                                 <p className="text-sm text-[#0F172A] font-medium">{dt.label}</p>
                             </div>
@@ -134,7 +134,7 @@ export default function C_Dashboard(){
                 </div>
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
                     <div className="xl:col-span-2 bg-white rounded-xl p-5 shadow-sm border border-gray-100">
-                        <div className="flex items-start justify-between mb-1">
+                        <div className="flex md:flex-row flex-col md:items-start md:justify-between mb-1">
                             <div>
                                 <h2 className="font-semibold text-[#0F172A] text-md">Performance Overview</h2>
                                 {data  && (
@@ -144,7 +144,7 @@ export default function C_Dashboard(){
                                     </p>
                                 )}
                             </div>
-                            <div className="flex gap-2 bg-gray-100 rounded-full py-1 px-2">
+                            <div className="hidden md:flex gap-2 bg-gray-100 rounded-full py-1 px-2">
                                 {["revenue", 'shipments'].map((tab) => (
                                     <button
                                         key={tab}
@@ -240,7 +240,7 @@ export default function C_Dashboard(){
                         </div>
                     ) : (
                         <div className="overflow-x-auto">
-                            <table className="w-full text-sm">
+                            <table className="min-w-max w-full text-sm">
                                 <thead>
                                     <tr className="text-[12px] text-gray-400 uppercase tracking-wide">
                                         <th className="px-5 py-3 text-left font-medium">Shipment Code</th>

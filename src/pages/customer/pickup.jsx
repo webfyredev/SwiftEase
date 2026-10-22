@@ -3,7 +3,9 @@ import { useAuth } from "../../context/AuthContext"
 import { useCallback } from "react";
 import api from "../../api/axios";
 import { useEffect } from "react";
+import { motion } from 'framer-motion'
 import { LuCalendar, LuChevronLeft, LuChevronRight, LuCircleAlert, LuCircleCheck, LuClock, LuLoader, LuX } from "react-icons/lu";
+import { buttonHover } from "../../effects/motions";
 
 const TIME_SLOTS = [
     {label : "Morning", time: "08:00", range : "8:00 AM - 12:00 PM"},
@@ -357,18 +359,19 @@ export default function Pickup_Scheduling(){
                             )}
                             
                         </div>
-                        <button
+                        <motion.button
+                            {...buttonHover}
                             onClick={handleSubmit}
                             disabled={submitting}
-                            className="w-full flex cursor-pointer items-center justify-center gap-2 bg-[#14B8A6]
-                            text-white py-3 rounded-xl text-sm font-semibold disabled:opacity:50 transition"
+                            className="w-full flex cursor-pointer items-center justify-center gap-2 bg-gray-900
+                            text-white py-3 rounded-xl text-sm font-semibold disabled:opacity:50"
                         >
                             {submitting ? (
                                 <><LuLoader size={15} className="animate-spin" /> Scheduling...</>
                             ): (
                                 <><LuCalendar size={15} /> Schedule Pickup</>
                             )}
-                        </button>
+                        </motion.button>
                     </div>
                 </div>
                 <div className="space-y-5">
@@ -450,7 +453,7 @@ export default function Pickup_Scheduling(){
                             </div>
                         ) : (
                             <div className="overflow-x-auto">
-                                <table className="w-full text-sm">
+                                <table className="min-w-max w-full text-sm">
                                     <thead>
                                         <tr className="border-b border-gray-50">
                                             {["Date", "Time", "Address", "Status"].map((data) => (

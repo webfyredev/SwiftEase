@@ -177,8 +177,8 @@ export default function Track_Package(){
             <div className="w-full h-auto flex flex-col items-center p-5">
                 <h3 className="text-2xl font-bold">Track Package</h3>
                 <p className="text-sm text-gray-400">Enter your shipment code to see real-time status.</p>
-                <form onSubmit={handleSearch} className="mt-5 flex space-x-3 p-1">
-                    <div className="w-110 h-11 border-1 border-gray-200 text-gray-500 bg-white rounded-lg flex space-x-3 items-center px-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0F172A]/20 focue:border-[#0F172A] bg-white tracking-wide">
+                <form onSubmit={handleSearch} className="mt-5 flex md:flex-row flex-col md:space-x-3 space-y-2 md:space-y-0 p-1">
+                    <div className="w-90 md:w-110 h-11 border-1 border-gray-200 text-gray-500 bg-white rounded-lg flex space-x-3 items-center px-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0F172A]/20 focue:border-[#0F172A] bg-white tracking-wide">
                         <LuSearch size={18} />
                         <input type="text" value={code} onChange={(e) => setCode(e.target.value.toUpperCase())} className="w-full h-full outline-none" placeholder="Enter Shipment Code (e.g. SWABCD1234)" />
                     </div>
@@ -186,7 +186,7 @@ export default function Track_Package(){
                         {...buttonHover}
                         type="submit"
                         disabled = {loading || !code.trim()}
-                        className="flex items-center py-1.5 font-medium px-5 bg-[#14B8A6] text-white rounded-lg text-sm cursor-pointer"
+                        className="flex items-center justify-center py-2 md:py-1.5 font-medium px-5 bg-[#14B8A6] text-white rounded-lg text-sm cursor-pointer"
                     >
                         {loading ? (
                             <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-1" />
@@ -204,7 +204,7 @@ export default function Track_Package(){
                     </div>
                 )}
                 {!data && !loading && !error && (
-                    <div className="w-[60%]  mt-5 flex flex-col rounded-2xl border border-gray-200 shadow-xs py-10 text-center">
+                    <div className="w-full md:w-[85%] lg:w-[60%] mt-5 flex flex-col rounded-2xl border border-gray-200 shadow-xs py-10 text-center">
                         <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
                             <LuTruck size={28} className="text-[#14B8A6]" />
                             
@@ -219,7 +219,7 @@ export default function Track_Package(){
                     </div>
                 )}
                 {loading && (
-                    <div className="bg-white w-[65%] rounded-2xl border border-gray-100 p-6 animate-pulse space-y-4">
+                    <div className="bg-white w-full md:w-[85%] lg:w-[65%] rounded-2xl border border-gray-100 p-6 animate-pulse space-y-4">
                         <div className="h-5 bg-gray-200 rounded w-40" />
                         <div className="h-4 bg-gray-200 rounded w-24" />
                         <div className="h-12 bg-gray-100 rounded-xl" />
@@ -235,7 +235,7 @@ export default function Track_Package(){
                     </div>
                 )}
                 {data && !loading && (
-                    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden w-[65%] mt-5">
+                    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden w-full md:w-[85%] lg:w-[65%] mt-5">
                         <div className="p-5 space-y-5">
                             <div className="flex items-start justify-between">
                                 <div>

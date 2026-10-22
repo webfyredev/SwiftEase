@@ -244,8 +244,8 @@ export default function Shipments(){
                     <h1 className="text-xl font-bold text-gray-900">My Shipments</h1>
                     <p className="text-sm text-gray-400 mt-0.5"> View and manage all your shipments</p>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                    <div className="flex gap-1 bg-gray-100 rounded-full py-1 px-2 w-fit">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+                    <div className="hidden md:flex gap-1 bg-gray-100 rounded-full py-1 px-2">
                         {TABS.map((tab) => (
                             <button
                                 key={tab.value}
@@ -258,12 +258,12 @@ export default function Shipments(){
                     </div>
                     <div className="relative">
                         <LuSearch size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                        <input type="text" placeholder="Search code or receiver.." value={search} onChange={((e) => setSearch(e.target.value))} className="pl-9 pr-4 py-2 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0F172A] w-74 bg-white" />
+                        <input type="text" placeholder="Search code or receiver.." value={search} onChange={((e) => setSearch(e.target.value))} className="pl-9 pr-4 py-2 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#0F172A] w-full lg:w-74 bg-white" />
                     </div>
                 </div>
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflowhidden">
                     <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
+                        <table className="min-w-max w-full text-sm">
                             <thead>
                                 <tr className="border-b border-gray-100">
                                     {["Shipment Code", "Receiver", "Service", "Weight", "Price", "Status", "Date", "Actions"].map((h) => (

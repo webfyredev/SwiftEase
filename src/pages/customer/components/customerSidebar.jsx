@@ -177,7 +177,7 @@ export default function Customer_Sidebar_Dashboard(){
                             </button>
                         </div>
                         <div className='w-auto flex items-center space-x-4 lg:mr-5 p-3'>
-                            <div className="flex items-center space-x-3 py-1.5 px-5 bg-gray-50 rounded-lg border-1 border-gray-200/50">
+                            <div className="hidden md:flex items-center space-x-3 py-1.5 px-5 bg-gray-50 rounded-lg border-1 border-gray-200/50">
                                 <FaWallet  className="text-[#14B8A6]"/>
                                 <p className="font-medium">
                                     {user?.wallet_balance ? Number(user.wallet_balance).toLocaleString("en-NG", {minimumFractionDigits: 2}) : "0.00"}
