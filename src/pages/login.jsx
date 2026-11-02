@@ -44,10 +44,13 @@ export default function Login(){
             if(user.role === "customer"){
                 navigate("/customer/dashboard", {replace : true })
             }else if(user.role === "driver"){
-                navigate("/driver/dashboard", {replace : true})
-            } else if(user.role === "stafff"){
-                navigate("/staff/dashboard", { replace : true})
-            }else{
+                navigate("/driver/dashboard", {replace : true })
+            }else if(user.role === "staff"){
+                navigate("/ad_s/dashboard", { replace : true })
+            }else if(user.role === "admin"){
+                navigate("/ad_s/dashboard", {replace : true })
+            }
+            else{
                 navigate("/login", { replace : true})
             }
         }catch(err){

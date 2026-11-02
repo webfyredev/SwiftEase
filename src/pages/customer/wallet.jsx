@@ -221,7 +221,7 @@ export default function Wallet(){
                         <h3 className="font-semibold text-gray-800 text-sm">Transaction History</h3>
                     </div>
                     <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
+                        <table className="min-w-max w-full text-sm">
                             <thead>
                                 <tr className="border-b border-gray-50">
                                     {["Date", "Type", "Description", "Amount", "Balance After"].map((data) => (

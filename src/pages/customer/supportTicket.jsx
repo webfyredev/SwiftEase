@@ -70,7 +70,7 @@ function Modal({ title, onClose, wide, children  }){
             <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
             <div className={`relative bg-white rounded-2xl shadow-2xl w-full ${wide ? "max-w-2xl" : "max-w-lg"} max-h-[90vh] flex flex-col`}>
                 <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 flex-shrink-0">
-                    <h2 className="font-bold text-gray-900 text-base">{title}</h2>
+                    <h2 className="font-bold text-gray-900 text-sm md:text-base">{title}</h2>
                     <button
                         onClick={onClose}
                         className="p-1.5 rounded-lg hover:bg-gray-100 transition cursor-pointer"
@@ -324,7 +324,7 @@ function ChatModal({ ticket, onClose, currentUser}) {
                             className="cursor-pointer flex items-center gap-2 bg-[#14B8A6] text-white px-4 py-2.5
                             rounded-xl text-sm font-semibold disabled:opacity-50 transition flex-shrink-0"
                         >
-                            {sending ? <LuLoader size={14} className="animate-spin" /> : <><LuSend size={14} /> Send</>}
+                            {sending ? <LuLoader size={14} className="animate-spin" /> : <><LuSend size={14} /> <span className="hidden md:flex">Send</span></>}
                         </button>
                     </div>
                 )}

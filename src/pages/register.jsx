@@ -127,9 +127,7 @@ export default function Register(){
                                 <option value="customer">Customer</option>
                                 <option value="driver">Driver</option>
                                 <option value="staff">Staff</option>
-
                             </select>
-                            {/* <input type="text" className="w-full h-10 border-1 border-slate-200 rounded-sm px-2.5 text-sm" placeholder="+234" /> */}
                         </div>
                         <div className="flex flex-col mt-3">
                             <label htmlFor="" className="text-[13px] text-gray-600 mb-1.5">Password</label>

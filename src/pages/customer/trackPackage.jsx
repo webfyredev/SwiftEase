@@ -174,7 +174,7 @@ export default function Track_Package(){
     const timeline = buildTimeline(data)
     return (
         <>
-            <div className="w-full h-auto flex flex-col items-center p-5">
+            <div className="w-full h-auto flex flex-col items-center py-5 md:px-5">
                 <h3 className="text-2xl font-bold">Track Package</h3>
                 <p className="text-sm text-gray-400">Enter your shipment code to see real-time status.</p>
                 <form onSubmit={handleSearch} className="mt-5 flex md:flex-row flex-col md:space-x-3 space-y-2 md:space-y-0 p-1">
@@ -235,7 +235,7 @@ export default function Track_Package(){
                     </div>
                 )}
                 {data && !loading && (
-                    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden w-full md:w-[85%] lg:w-[65%] mt-5">
+                    <div className="bg-white rounded-2xl border-1 border-gray-100 shadow-sm overflow-hidden w-full md:w-[85%] lg:w-[65%] mt-5">
                         <div className="p-5 space-y-5">
                             <div className="flex items-start justify-between">
                                 <div>
@@ -285,7 +285,7 @@ export default function Track_Package(){
                                     Tracking Timeline
                                 </h3>
                                 <div className="relative">
-                                    <div className="absolute left-5 top-5 bottom-5 w-0.5 bg-gray-100" />
+                                    {/* <div className="absolute left-5 top-5 bottom-5 w-0.5 bg-gray-100" /> */}
                                     <div className="space-y-0">
                                         {timeline.map(({ step, state, event}, idx) => (
                                             <TimelineStep key={step.status} step={step} state={state} event={event} />
@@ -353,7 +353,7 @@ export default function Track_Package(){
                                                                 {data.driver_phone && (
                                                                     <a
                                                                         href={`tel:${data.driver_phone}`}
-                                                                        className="text-xs text-[#14B8A6] flex items-center gap-1 mt-0.5 hover:underline"
+                                                                        className="text-xs text-[#14B8A6] hover:text-emerald-500 transition-all flex items-center gap-2 mt-0.5 hover:underline"
                                                                     >
                                                                         <LuPhone  size={11}/>
                                                                         {data.driver_phone}
