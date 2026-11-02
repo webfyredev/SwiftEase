@@ -5,7 +5,7 @@ import { FaPaperPlane, FaMapMarkedAlt, FaPhoneAlt, FaEnvelope, FaClock, FaUser,}
 import { buttonHover, cardHover, scrollLeft, scrollUp, scrollUpDelay } from "../effects/motions";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import contactImg from '../images/page/pages (10).webp'
+import contactImg from '../images/page/contact.jpg'
 import { useEffect, useState } from "react";
 import axios from "axios";
 

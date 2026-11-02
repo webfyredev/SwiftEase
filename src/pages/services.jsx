@@ -4,9 +4,9 @@ import PageHeader from "../components/pageHeader";
 import serviceHeaderImg from '../images/page/pages (5).webp'
 import { motion } from "framer-motion";
 import { scrollUp, scrollUpDelay, buttonHover, scrollLeft, cardHover } from "../effects/motions";
-import serviceImg1 from '../images/page/page (1).webp'
-import serviceImg2 from '../images/page/page (2).webp'
-import serviceImg3 from '../images/page/pages (6).webp'
+import serviceImg1 from '../images/page/ecom.jpg'
+import serviceImg2 from '../images/services/ware.jpg'
+import serviceImg3 from '../images/services/ecomm.jpg'
 import serviceImg4 from '../images/page/page (3).webp'
 import {FaWarehouse, FaBoxOpen, FaGlobeAmericas, FaCheck, FaShippingFast, FaBolt, FaHeadset, FaMobileAlt, FaShoppingCart, FaBriefcaseMedical, FaCarSide, FaMicrochip, } from "react-icons/fa";
 import { GiFactory, GiForkKnifeSpoon, GiClothes } from "react-icons/gi";
@@ -15,6 +15,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { LuArrowRight } from "react-icons/lu";
 
 export default function Service(){
     const {hash} = useLocation();
@@ -663,25 +664,21 @@ export default function Service(){
                         className="group w-full bg-[#F9FAFB] border border-gray-100 rounded-xl p-6 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                     >
 
-                        {/* Icon */}
                         <div className="w-fit">
                             {industry.icon}
                         </div>
 
 
-                        {/* Title */}
                         <h3 className="font-bold text-lg text-gray-800 mt-5">
                             {industry.title}
                         </h3>
 
 
-                        {/* Description */}
                         <p className="text-sm text-gray-500 leading-6 mt-3">
                             {industry.description}
                         </p>
 
 
-                        {/* Services */}
                         <div className="mt-5 pt-5 border-t border-gray-200">
 
                             <p className="text-xs font-semibold uppercase tracking-wide text-gray-700 mb-3">
@@ -698,7 +695,7 @@ export default function Service(){
                                     >
 
                                         <FaCheck
-                                            className="w-3 h-3 text-lime-500 mt-1 mr-2 shrink-0"
+                                            className="w-3 h-3 text-[#14B8A6] mt-1 mr-2 shrink-0"
                                         />
 
                                         <span className="text-xs text-gray-500">
@@ -721,7 +718,7 @@ export default function Service(){
                         >
                             Discuss your logistics needs
                             <span className="ml-2 group-hover:translate-x-1 transition-transform">
-                                →
+                                <LuArrowRight />
                             </span>
                         </a>
 

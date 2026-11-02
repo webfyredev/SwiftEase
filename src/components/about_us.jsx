@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import aboutImg from '../images/page/pages (11).webp'
+import aboutImg from '../images/page/abt.jpg'
 import { scrollUp, scrollLeft, buttonHover } from "../effects/motions"
 import { Link } from "react-router-dom"
 export default function About_Us(){

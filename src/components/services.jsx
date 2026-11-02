@@ -1,11 +1,11 @@
 import service1 from '../images/page/service1.jpg'
 import service2 from '../images/page/service2.jpg'
-import service3 from '../images/page/page (5).webp'
+import service3 from '../images/page/ecom.jpg'
 import service4 from '../images/page/service4.jpg'
 import service5 from '../images/page/service5.jpg'
 import service6 from '../images/page/service6.jpg'
-import service7 from '../images/page/service7.jpg'
-import service8 from '../images/page/service8.jpg'
+import service7 from '../images/page/pickup.jpg'
+import service8 from '../images/page/logis.jpg'
 
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
@@ -140,8 +140,8 @@ export default function Services(){
                 <div className='w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 gap-5'>
                     {services.map((service) =>(
                         <motion.div
-                        {...scrollLeft} {...cardHover} key={service.id} className='flex flex-col w-full mb-5 rounded-md'>
-                            <img src={service.image} className='w-full h-50 md:h-60 object-cover rounded-t-md'/>
+                        {...scrollLeft} key={service.id} className='flex flex-col w-full mb-5 rounded-md overflow-hidden group'>
+                            <img src={service.image} className='w-full h-50 md:h-60 object-cover rounded-t-md group-hover:scale-105 cursor-pointer transition-all duration-300'/>
                             <div className='w-full flex flex-col p-3 rounded-b-md shadow-sm'>
                                 <h3 className='my-2 text-[#0F172A] font-semibold'>
                                     {service.title}
@@ -149,9 +149,9 @@ export default function Services(){
                                 <p className='text-gray-600 text-sm'>
                                     {service.text}
                                 </p>
-                                <ul className='w-full grid grid-cols-2 mt-3 gap-2'>
+                                <ul className='w-fit grid grid-cols-2 mt-3 gap-2'>
                                     {service.features.map((data) => (
-                                        <li className='text-[13px] flex items-center justify-center py-1.5 rounded-md bg-[#14B8A6]/12 text-[#14B8A6]'>{data}</li>
+                                        <li className='text-[10px] w-fit flex items-center justify-center py-1.5 px-3 rounded-md bg-[#14B8A6]/10 text-[#14B8A6] font-semibold'>{data}</li>
                                     ))}
                                 </ul>
                                 <motion.button {...buttonHover} className='my-5 py-2.5 rounded-md w-35 text-sm bg-[#14B8A6] font-semibold text-white cursor-pointer'>

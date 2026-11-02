@@ -1,7 +1,7 @@
 import Footer from "../components/footer";
 import NavBar from "../components/navbar";
 import Tracking from "../components/tracking";
-import trackingImg from '../images/page/pages (9).webp'
+import trackingImg from '../images/page/track.jpg'
 import { motion } from "framer-motion";
 import { scrollUp, scrollUpDelay, buttonHover, scrollLeft, cardHover } from "../effects/motions";
 import { FaLocationArrow, FaBell, FaClipboardCheck, FaCalendarCheck, FaShieldAlt, FaHeadset } from "react-icons/fa";
