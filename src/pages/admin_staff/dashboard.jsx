@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext"
 import api from "../../api/axios";
-import { LuArrowRight, LuCircleCheck, LuClock, LuCreditCard, LuHeadphones, LuPackage, LuTrendingUp } from "react-icons/lu";
+import { LuArrowRight, LuCircleCheck, LuClock, LuCreditCard, LuHeadphones, LuPackage, LuStar, LuTrendingUp } from "react-icons/lu";
 import {
   LineChart, Line, BarChart, Bar, PieChart, Pie, Cell,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -130,8 +130,8 @@ export default function Ad_S_Dashboard(){
                         </div>
                     ))}
                 </div>
-                <div className="w-full flex gap-5">
-                    <div className="w-[60%] bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                <div className="w-full flex md:flex-row flex-col gap-5">
+                    <div className="w-full md:w-[60%] bg-white rounded-xl p-5 shadow-sm border border-gray-100">
                         <h3 className="font-semibold text-gray-800 text-sm mb-4">Revenue (Last 30 days)</h3>
                         {loading ? <div className="h-52 bg-gray-100 animate-pulse rounded-lg" /> : (
                             <ResponsiveContainer width="100%" height={220}>
@@ -145,7 +145,7 @@ export default function Ad_S_Dashboard(){
                             </ResponsiveContainer>
                         )}
                     </div>
-                    <div className="w-[40%] bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                    <div className="w-full md:w-[40%] bg-white rounded-xl p-5 shadow-sm border border-gray-100">
                         <h3 className="font-semibold text-gray-800 text-sm mb-4">Shipments by Status</h3>
                         {loading ? <div className="h-52 animte-pulse bg-gray-100 rounded-lg" /> : (
                             <ResponsiveContainer width="100%" height={220}>
@@ -162,8 +162,8 @@ export default function Ad_S_Dashboard(){
                         )}
                     </div>
                 </div>
-                <div className="w-full flex space-x-5">
-                    <div className="w-[65%] border p-5 border rounded-xl bg-white shadow-sm border-gray-100">
+                <div className="w-full flex md:flex-row flex-col md:space-x-5 space-y-5 md:space-y-0">
+                    <div className="w-full md:w-[65%] border p-5 border rounded-xl bg-white shadow-sm border-gray-100">
                         <div className="flex items-center justify-between">
                             <h3 className="font-semibold text-gray-800 text-sm">Recent Shipments</h3>
                             <Link to="/ad_s/shipments" className="flex items-center text-gray-700 text-[13px] hover:text-gray-900 transition-colors space-x-0.5">
@@ -206,6 +206,61 @@ export default function Ad_S_Dashboard(){
                                     </tr>
                                 ))}
                             </tbody>
+                        </div>
+                    </div>
+                    <div className="w-full md:w-[35%] flex flex-col space-y-4">
+                        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                            <h3 className="font-semibold text-gray-800 text-sm mb-3">Active Drivers</h3>
+                            {loading ? 
+                                <div className="space-y-2">
+                                    {Array(3).fill(0).map((_, i) => <div key={i} className="h-8 bg-ray-100 animate-pulse rounded-lg" />)}
+                                </div>
+                            : (data?.active_drivers ?? []).length === 0 ? 
+                                <p className="text-xs text-gray-400">No Drivers on duty</p> 
+                            : (data?.active_drivers ?? []).map((drv, idx) => (
+                                <div key={idx} className="flex items-center gap-2 py-1.5">
+                                    <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0" />
+                                    <div className="w-full flex items-center justify-between ">
+                                        <div>
+                                            <p className="text-xs font-medium text-gray-700 truncate">{drv.name}</p>
+                                            <p className="text-[10px] text-gray-400 font-semibold flex space-x-1">
+                                                <span>{drv.vehicle}</span> <span className="font-normal capitalize">({drv.vehicle_type})</span>
+                                            </p>
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <div className="flex items-center text-amber-500 text-[11px]">
+                                                {[...Array(5)].map((_, i) => (
+                                                    <LuStar key={i} className={i < Math.round(Number(drv.rating)) ? 'text-amber-500 fill-amber-500' : 'text-gray-300'} />
+                                                ))}
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                            <h3 className="font-semibold text-gray-800 text-sm mb-3">Open Tickets</h3>
+                            {loading ? 
+                                <div className="space-y-2">
+                                    {Array(3).fill(0).map((_, i) => <div key={i} className="h-8 bg-gray-100 animate-pulse rounded-lg" />)}
+                                </div> : (
+                                    (data?.recent_tickets ?? []).length === 0 ? 
+                                    <p className="text-xs text-gray-400">No open tickets</p>
+                                    : (data?.recent_tickets ?? []).map((tik) => (
+                                        <div key={tik.id} className="flex py-1.5 border-b border-gray-50  last:border:0">
+                                            <div className="w-full flex items-center justify-between ">
+                                                <div>
+                                                    <p className="text-xs font-bold text-gray-700">{tik.ticket_no}</p>
+                                                    <p className="text-[10px] text-gray-400 mt-0.5 truncate">{tik.subject}</p>
+                                                
+                                                </div>
+                                                <Badge status={tik.status} />
+                                            </div>
+                                        </div>
+                                    ))
+                                )
+                            }
                         </div>
                     </div>
                 </div>
